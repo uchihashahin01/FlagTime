@@ -1,0 +1,131 @@
+/* ═══════════════════════════════════════════════
+   App Layout & Core Styles
+   ═══════════════════════════════════════════════ */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  padding-bottom: var(--space-3xl);
+}
+
+/* ── Events Grid ── */
+.events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  padding-top: var(--space-lg);
+}
+
+/* ── FAB ── */
+.fab-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-xl);
+}
+
+.fab-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  color: #0a0e1a;
+  box-shadow: 0 4px 20px rgba(0, 224, 255, 0.25);
+  transition: transform var(--transition-spring), box-shadow var(--transition-base);
+}
+
+.fab-button:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 224, 255, 0.35);
+}
+
+.fab-button:active {
+  transform: scale(0.95);
+}
+
+.fab-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Ambient Background ── */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.03;
+}
+
+.particle.p1 {
+  width: 500px;
+  height: 500px;
+  background: var(--accent-cyan);
+  top: -100px;
+  right: -200px;
+  animation: float 12s ease-in-out infinite;
+}
+
+.particle.p2 {
+  width: 400px;
+  height: 400px;
+  background: var(--accent-magenta);
+  bottom: -100px;
+  left: -150px;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+.particle.p3 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent-green);
+  top: 50%;
+  left: 60%;
+  animation: float 14s ease-in-out infinite 4s;
+}
+
+/* ── Footer ── */
+.app-footer {
+  text-align: center;
+  padding: var(--space-2xl) 0 var(--space-xl);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.app-footer a {
+  font-weight: 700;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity var(--transition-fast);
+}
+
+.app-footer a:hover {
+  opacity: 0.8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 0 var(--space-md);
+    padding-bottom: var(--space-2xl);
+  }
+}
