@@ -5,6 +5,7 @@
  */
 
 const isDev = import.meta.env.DEV;
+const REQUEST_TIMEOUT_MS = 12000;
 
 /**
  * Build the fetch URL for a CTFtime API endpoint.
@@ -17,6 +18,29 @@ function buildApiUrl(path) {
     }
     const target = `https://ctftime.org/api/v1${path}`;
     return `https://corsproxy.io/?url=${encodeURIComponent(target)}`;
+}
+
+async function fetchCtftime(path) {
+    const url = buildApiUrl(path);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+    try {
+        const res = await fetch(url, {
+            headers: {
+                Accept: 'application/json',
+            },
+            signal: controller.signal,
+        });
+        return res;
+    } catch (err) {
+        if (err?.name === 'AbortError') {
+            throw new Error('CTFtime request timed out. Please try again.');
+        }
+        throw new Error('Unable to reach CTFtime right now. Check your connection and retry.');
+    } finally {
+        clearTimeout(timeoutId);
+    }
 }
 
 /**
@@ -36,13 +60,7 @@ export function parseCtftimeUrl(url) {
  * Fetch event details from CTFtime API.
  */
 export async function fetchCtftimeEvent(eventId) {
-    const url = buildApiUrl(`/events/${eventId}/`);
-
-    const res = await fetch(url, {
-        headers: {
-            Accept: 'application/json',
-        },
-    });
+    const res = await fetchCtftime(`/events/${eventId}/`);
 
     if (!res.ok) {
         if (res.status === 404) {
@@ -53,6 +71,46 @@ export async function fetchCtftimeEvent(eventId) {
 
     const data = await res.json();
     return normalizeEvent(data);
+}
+
+/**
+ * Fetch quick-add suggestions from CTFtime and split into running/upcoming buckets.
+ */
+export async function fetchCtftimeSuggestions(limitPerGroup = 6) {
+    const res = await fetchCtftime('/events/');
+
+    if (!res.ok) {
+        throw new Error(`CTFtime API error: ${res.status} ${res.statusText}`);
+    }
+
+    const rows = await res.json();
+    if (!Array.isArray(rows)) {
+        throw new Error('Unexpected CTFtime response while loading suggestions.');
+    }
+
+    const now = Date.now();
+    const normalized = rows
+        .map(normalizeEvent)
+        .filter((event) => {
+            const start = Date.parse(event.start);
+            const finish = Date.parse(event.finish);
+            return Number.isFinite(start) && Number.isFinite(finish) && finish > now;
+        })
+        .sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
+
+    const running = normalized
+        .filter((event) => {
+            const start = Date.parse(event.start);
+            const finish = Date.parse(event.finish);
+            return start <= now && now <= finish;
+        })
+        .slice(0, limitPerGroup);
+
+    const upcoming = normalized
+        .filter((event) => Date.parse(event.start) > now)
+        .slice(0, limitPerGroup);
+
+    return { running, upcoming };
 }
 
 /**

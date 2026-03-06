@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import './CountdownTimer.css';
 
 function calculateTimeLeft(targetDate) {
@@ -20,21 +20,9 @@ function calculateTimeLeft(targetDate) {
 }
 
 function DigitCell({ value, label }) {
-    const prevValue = useRef(value);
-    const [flip, setFlip] = useState(false);
-
-    useEffect(() => {
-        if (prevValue.current !== value) {
-            setFlip(true);
-            const t = setTimeout(() => setFlip(false), 300);
-            prevValue.current = value;
-            return () => clearTimeout(t);
-        }
-    }, [value]);
-
     return (
         <div className="digit-group">
-            <div className={`digit-cell ${flip ? 'digit-flip' : ''}`}>
+            <div className="digit-cell digit-flip">
                 <span className="digit-value">{String(value).padStart(2, '0')}</span>
             </div>
             <span className="digit-label">{label}</span>
@@ -78,13 +66,13 @@ export default function CountdownTimer({ startDate, endDate }) {
                         <span className="status-text">LIVE NOW — Ends in</span>
                     </div>
                     <div className="digit-row">
-                        <DigitCell value={timeLeft.days} label="Days" />
+                        <DigitCell key={`live-days-${timeLeft.days}`} value={timeLeft.days} label="Days" />
                         <span className="digit-separator">:</span>
-                        <DigitCell value={timeLeft.hours} label="Hrs" />
+                        <DigitCell key={`live-hours-${timeLeft.hours}`} value={timeLeft.hours} label="Hrs" />
                         <span className="digit-separator">:</span>
-                        <DigitCell value={timeLeft.minutes} label="Min" />
+                        <DigitCell key={`live-minutes-${timeLeft.minutes}`} value={timeLeft.minutes} label="Min" />
                         <span className="digit-separator">:</span>
-                        <DigitCell value={timeLeft.seconds} label="Sec" />
+                        <DigitCell key={`live-seconds-${timeLeft.seconds}`} value={timeLeft.seconds} label="Sec" />
                     </div>
                 </>
             ) : (
@@ -94,13 +82,13 @@ export default function CountdownTimer({ startDate, endDate }) {
                         <span className="status-text">Starts in</span>
                     </div>
                     <div className="digit-row">
-                        <DigitCell value={timeLeft.days} label="Days" />
+                        <DigitCell key={`upcoming-days-${timeLeft.days}`} value={timeLeft.days} label="Days" />
                         <span className="digit-separator">:</span>
-                        <DigitCell value={timeLeft.hours} label="Hrs" />
+                        <DigitCell key={`upcoming-hours-${timeLeft.hours}`} value={timeLeft.hours} label="Hrs" />
                         <span className="digit-separator">:</span>
-                        <DigitCell value={timeLeft.minutes} label="Min" />
+                        <DigitCell key={`upcoming-minutes-${timeLeft.minutes}`} value={timeLeft.minutes} label="Min" />
                         <span className="digit-separator">:</span>
-                        <DigitCell value={timeLeft.seconds} label="Sec" />
+                        <DigitCell key={`upcoming-seconds-${timeLeft.seconds}`} value={timeLeft.seconds} label="Sec" />
                     </div>
                 </>
             )}

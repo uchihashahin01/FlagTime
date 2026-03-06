@@ -22,6 +22,7 @@
 | Feature | Description |
 |---------|-------------|
 | 🏴 **CTFtime Integration** | Paste any CTFtime URL and the event details are auto-fetched instantly |
+| ⚡ **Quick Add Suggestions** | Inside Add Event, instantly quick-add **Running** and **Upcoming** CTFtime events |
 | ✏️ **Manual Events** | Add custom countdowns for training sessions, deadlines, or anything else |
 | ⏱️ **Live Countdowns** | Animated timers tick down every second with flip animations |
 | 📊 **Smart Sorting** | Events auto-sort: **Live → Upcoming → Ended** |
@@ -69,6 +70,15 @@ Open **http://localhost:5173** in your browser.
    ```
 4. Click **"Fetch & Add Event"**
 5. The event card appears with a live countdown, format badge, and weight score
+
+### Quick Add CTFtime Suggestions
+
+1. Open **Add Event**
+2. In the **🏴 CTFtime URL** tab, scroll to **Quick Add from CTFtime**
+3. Pick from:
+  - **Running Now** events
+  - **Upcoming** events
+4. Click any suggestion to add it instantly
 
 ### Adding a Custom Event
 

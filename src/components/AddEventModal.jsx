@@ -1,12 +1,61 @@
-import { useState } from 'react';
-import { parseCtftimeUrl, fetchCtftimeEvent } from '../services/ctftime';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { parseCtftimeUrl, fetchCtftimeEvent, fetchCtftimeSuggestions } from '../services/ctftime';
 import './AddEventModal.css';
+
+function formatRange(start, finish) {
+    const startDate = new Date(start);
+    const finishDate = new Date(finish);
+
+    return `${startDate.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    })} - ${finishDate.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    })}`;
+}
+
+function QuickAddList({ title, items, emptyMessage, onAdd }) {
+    return (
+        <div className="quick-add-group">
+            <h4 className="quick-add-title">{title}</h4>
+            {items.length === 0 ? (
+                <p className="quick-add-empty">{emptyMessage}</p>
+            ) : (
+                <div className="quick-add-list">
+                    {items.map((event) => (
+                        <button
+                            key={event.id}
+                            type="button"
+                            className="quick-add-item"
+                            onClick={() => onAdd(event)}
+                            title="Add this event"
+                        >
+                            <span className="quick-add-item-title">{event.title}</span>
+                            <span className="quick-add-item-time">{formatRange(event.start, event.finish)}</span>
+                        </button>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
 
 export default function AddEventModal({ isOpen, onClose, onAdd }) {
     const [tab, setTab] = useState('ctftime');
     const [ctftimeUrl, setCtftimeUrl] = useState('');
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+    const [suggestions, setSuggestions] = useState({ running: [], upcoming: [] });
+    const [suggestionsLoading, setSuggestionsLoading] = useState(false);
+    const [suggestionsError, setSuggestionsError] = useState('');
+
+    const modalRef = useRef(null);
+    const closeButtonRef = useRef(null);
 
     // Manual fields
     const [manualTitle, setManualTitle] = useState('');
@@ -14,7 +63,7 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
     const [manualEnd, setManualEnd] = useState('');
     const [manualDescription, setManualDescription] = useState('');
 
-    const resetForm = () => {
+    const resetForm = useCallback(() => {
         setCtftimeUrl('');
         setManualTitle('');
         setManualStart('');
@@ -22,12 +71,13 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
         setManualDescription('');
         setError('');
         setLoading(false);
-    };
+        setSuggestionsError('');
+    }, []);
 
-    const handleClose = () => {
+    const handleClose = useCallback(() => {
         resetForm();
         onClose();
-    };
+    }, [onClose, resetForm]);
 
     const handleCtftimeSubmit = async (e) => {
         e.preventDefault();
@@ -44,6 +94,24 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
         } finally {
             setLoading(false);
         }
+    };
+
+    const loadSuggestions = useCallback(async () => {
+        setSuggestionsLoading(true);
+        setSuggestionsError('');
+        try {
+            const data = await fetchCtftimeSuggestions();
+            setSuggestions(data);
+        } catch (err) {
+            setSuggestionsError(err.message || 'Unable to load quick-add suggestions right now.');
+        } finally {
+            setSuggestionsLoading(false);
+        }
+    }, []);
+
+    const handleQuickAdd = (event) => {
+        onAdd(event);
+        handleClose();
     };
 
     const handleManualSubmit = (e) => {
@@ -84,15 +152,70 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
         handleClose();
     };
 
+    useEffect(() => {
+        if (!isOpen) return;
+
+        loadSuggestions();
+    }, [isOpen, loadSuggestions]);
+
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        closeButtonRef.current?.focus();
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                handleClose();
+                return;
+            }
+
+            if (e.key !== 'Tab' || !modalRef.current) return;
+
+            const focusable = modalRef.current.querySelectorAll(
+                'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            );
+            if (!focusable.length) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            const active = document.activeElement;
+
+            if (e.shiftKey && active === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && active === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = previousOverflow;
+        };
+    }, [isOpen, handleClose]);
+
     if (!isOpen) return null;
 
     return (
         <div className="modal-overlay" onClick={handleClose}>
-            <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+            <div
+                className="modal-container"
+                ref={modalRef}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="add-event-title"
+                onClick={(e) => e.stopPropagation()}
+            >
                 {/* Header */}
                 <div className="modal-header">
-                    <h2 className="modal-title">Add Event</h2>
-                    <button className="modal-close" onClick={handleClose}>
+                    <h2 className="modal-title" id="add-event-title">Add Event</h2>
+                    <button ref={closeButtonRef} type="button" className="modal-close" onClick={handleClose}>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                         </svg>
@@ -102,6 +225,7 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
                 {/* Tabs */}
                 <div className="modal-tabs">
                     <button
+                        type="button"
                         className={`modal-tab ${tab === 'ctftime' ? 'active' : ''}`}
                         onClick={() => { setTab('ctftime'); setError(''); }}
                     >
@@ -109,6 +233,7 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
                         CTFtime URL
                     </button>
                     <button
+                        type="button"
                         className={`modal-tab ${tab === 'manual' ? 'active' : ''}`}
                         onClick={() => { setTab('manual'); setError(''); }}
                     >
@@ -152,6 +277,41 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
                                 'Fetch & Add Event'
                             )}
                         </button>
+
+                        <section className="quick-add-section" aria-label="Quick add CTFtime events">
+                            <div className="quick-add-header-row">
+                                <h3 className="quick-add-heading">Quick Add from CTFtime</h3>
+                                <button
+                                    type="button"
+                                    className="quick-add-refresh"
+                                    onClick={loadSuggestions}
+                                    disabled={suggestionsLoading}
+                                >
+                                    Refresh
+                                </button>
+                            </div>
+
+                            {suggestionsLoading ? (
+                                <p className="quick-add-loading">Loading suggestions...</p>
+                            ) : suggestionsError ? (
+                                <p className="quick-add-error">{suggestionsError}</p>
+                            ) : (
+                                <>
+                                    <QuickAddList
+                                        title="Running Now"
+                                        items={suggestions.running}
+                                        emptyMessage="No running CTF events found right now."
+                                        onAdd={handleQuickAdd}
+                                    />
+                                    <QuickAddList
+                                        title="Upcoming"
+                                        items={suggestions.upcoming}
+                                        emptyMessage="No upcoming CTF events found."
+                                        onAdd={handleQuickAdd}
+                                    />
+                                </>
+                            )}
+                        </section>
                     </form>
                 )}
 
