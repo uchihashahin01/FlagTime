@@ -7,6 +7,20 @@
 const isDev = import.meta.env.DEV;
 const REQUEST_TIMEOUT_MS = 12000;
 
+function getCtftimeApiTarget(path) {
+    return `https://ctftime.org/api/v1${path}`;
+}
+
+function getProdProxyUrls(path) {
+    const target = getCtftimeApiTarget(path);
+
+    return [
+        `https://corsproxy.io/?url=${encodeURIComponent(target)}`,
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
+        `https://cors.isomorphic-git.org/${target}`,
+    ];
+}
+
 /**
  * Build the fetch URL for a CTFtime API endpoint.
  * In dev → /api/ctftime/events/{id}/  (Vite proxy)
@@ -16,31 +30,47 @@ function buildApiUrl(path) {
     if (isDev) {
         return `/api/ctftime${path}`;
     }
-    const target = `https://ctftime.org/api/v1${path}`;
-    return `https://corsproxy.io/?url=${encodeURIComponent(target)}`;
+    return getProdProxyUrls(path)[0];
 }
 
 async function fetchCtftime(path) {
-    const url = buildApiUrl(path);
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    const urls = isDev ? [buildApiUrl(path)] : getProdProxyUrls(path);
+    let lastError = null;
 
-    try {
-        const res = await fetch(url, {
-            headers: {
-                Accept: 'application/json',
-            },
-            signal: controller.signal,
-        });
-        return res;
-    } catch (err) {
-        if (err?.name === 'AbortError') {
-            throw new Error('CTFtime request timed out. Please try again.');
+    for (const url of urls) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+        try {
+            const res = await fetch(url, {
+                headers: {
+                    Accept: 'application/json',
+                },
+                signal: controller.signal,
+            });
+
+            if (!res.ok && (res.status === 403 || res.status === 429 || res.status >= 500) && !isDev) {
+                lastError = new Error(`Proxy responded with ${res.status}.`);
+                continue;
+            }
+
+            return res;
+        } catch (err) {
+            if (err?.name === 'AbortError') {
+                lastError = new Error('CTFtime request timed out. Please try again.');
+                continue;
+            }
+            lastError = err;
+        } finally {
+            clearTimeout(timeoutId);
         }
-        throw new Error('Unable to reach CTFtime right now. Check your connection and retry.');
-    } finally {
-        clearTimeout(timeoutId);
     }
+
+    if (lastError?.message?.includes('timed out')) {
+        throw lastError;
+    }
+
+    throw new Error('Unable to reach CTFtime right now. Proxy service returned 403/429 or is unavailable. Please retry in a moment.');
 }
 
 /**
