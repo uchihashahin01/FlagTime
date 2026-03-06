@@ -49,7 +49,25 @@ async function fetchCtftime(path) {
  */
 export function parseCtftimeUrl(url) {
     const trimmed = url.trim();
-    const match = trimmed.match(/ctftime\.org\/event\/(\d+)/i);
+
+    if (!trimmed) {
+        throw new Error('Please provide a CTFtime event URL.');
+    }
+
+    const normalized = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
+    let parsed;
+
+    try {
+        parsed = new URL(normalized);
+    } catch {
+        throw new Error('Invalid CTFtime URL. Expected format: https://ctftime.org/event/1234');
+    }
+
+    if (!parsed.hostname.toLowerCase().endsWith('ctftime.org')) {
+        throw new Error('Invalid CTFtime URL. Expected format: https://ctftime.org/event/1234');
+    }
+
+    const match = parsed.pathname.match(/\/event\/(\d+)(?:\/|$)/i);
     if (!match) {
         throw new Error('Invalid CTFtime URL. Expected format: https://ctftime.org/event/1234');
     }

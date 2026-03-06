@@ -63,6 +63,10 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
     const [manualEnd, setManualEnd] = useState('');
     const [manualDescription, setManualDescription] = useState('');
 
+    const nowLocal = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+        .toISOString()
+        .slice(0, 16);
+
     const resetForm = useCallback(() => {
         setCtftimeUrl('');
         setManualTitle('');
@@ -339,6 +343,7 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
                                     className="form-input"
                                     value={manualStart}
                                     onChange={(e) => setManualStart(e.target.value)}
+                                    min={nowLocal}
                                     required
                                 />
                             </div>
@@ -349,6 +354,7 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
                                     className="form-input"
                                     value={manualEnd}
                                     onChange={(e) => setManualEnd(e.target.value)}
+                                    min={manualStart || nowLocal}
                                     required
                                 />
                             </div>
