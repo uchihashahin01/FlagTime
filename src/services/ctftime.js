@@ -7,6 +7,8 @@
 const isDev = import.meta.env.DEV;
 const REQUEST_TIMEOUT_MS = 12000;
 
+const CTF_LIST_QUERY = 'year=2026&online=-1&format=0&restrictions=-1';
+
 function getCtftimeApiTarget(path) {
     return `https://ctftime.org/api/v1${path}`;
 }
@@ -18,6 +20,14 @@ function getProdProxyUrls(path) {
         `https://corsproxy.io/?url=${encodeURIComponent(target)}`,
         `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
         `https://cors.isomorphic-git.org/${target}`,
+    ];
+}
+
+function getProdTextProxyUrls(targetUrl) {
+    return [
+        `https://r.jina.ai/http://${targetUrl.replace(/^https?:\/\//i, '')}`,
+        `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`,
+        `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
     ];
 }
 
@@ -71,6 +81,106 @@ async function fetchCtftime(path) {
     }
 
     throw new Error('Unable to reach CTFtime right now. Proxy service returned 403/429 or is unavailable. Please retry in a moment.');
+}
+
+async function fetchTextWithFallback(urls) {
+    let lastError = null;
+
+    for (const url of urls) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+        try {
+            const res = await fetch(url, {
+                headers: {
+                    Accept: 'text/plain,text/html,application/json',
+                },
+                signal: controller.signal,
+            });
+
+            if (!res.ok) {
+                lastError = new Error(`Source responded with ${res.status}.`);
+                continue;
+            }
+
+            const text = await res.text();
+            if (!text || !text.trim()) {
+                lastError = new Error('Source returned an empty response.');
+                continue;
+            }
+
+            return text;
+        } catch (err) {
+            if (err?.name === 'AbortError') {
+                lastError = new Error('CTFtime request timed out. Please try again.');
+                continue;
+            }
+            lastError = err;
+        } finally {
+            clearTimeout(timeoutId);
+        }
+    }
+
+    if (lastError?.message?.includes('timed out')) {
+        throw lastError;
+    }
+
+    throw new Error('Unable to load CTFtime list data right now. Please retry in a moment.');
+}
+
+function parseJinaWrappedJson(text) {
+    const start = text.indexOf('[');
+    const end = text.lastIndexOf(']');
+    if (start === -1 || end === -1 || end <= start) return null;
+
+    try {
+        const slice = text.slice(start, end + 1);
+        const parsed = JSON.parse(slice);
+        return Array.isArray(parsed) ? parsed : null;
+    } catch {
+        return null;
+    }
+}
+
+function parseRunningRowsFromMarkdown(markdown) {
+    const rows = [];
+    const rowRegex = /^\|\s*\[([^\]]+)\]\(https?:\/\/ctftime\.org\/event\/(\d+)\)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/gm;
+
+    for (const match of markdown.matchAll(rowRegex)) {
+        const title = match[1].trim();
+        const eventId = match[2].trim();
+        const dateRange = match[3].trim();
+        const format = match[4].trim();
+        const location = match[5].trim();
+
+        rows.push({
+            id: `ctftime-${eventId}`,
+            ctftimeId: Number(eventId),
+            title,
+            start: '',
+            finish: '',
+            displayRange: dateRange,
+            url: `https://ctftime.org/event/${eventId}/`,
+            ctftimeUrl: `https://ctftime.org/event/${eventId}/`,
+            logo: null,
+            format,
+            weight: 0,
+            location,
+            description: '',
+            participants: 0,
+            isCtftime: true,
+            addedAt: new Date().toISOString(),
+        });
+    }
+
+    return rows;
+}
+
+async function fetchRunningFromListFallback(limitPerGroup) {
+    const target = `https://ctftime.org/event/list/?${CTF_LIST_QUERY}&now=true`;
+    const urls = isDev ? [target] : getProdTextProxyUrls(target);
+    const text = await fetchTextWithFallback(urls);
+    return parseRunningRowsFromMarkdown(text).slice(0, limitPerGroup);
 }
 
 /**
@@ -131,7 +241,14 @@ export async function fetchCtftimeSuggestions(limitPerGroup = 6) {
         throw new Error(`CTFtime API error: ${res.status} ${res.statusText}`);
     }
 
-    const rows = await res.json();
+    let rows = await res.json();
+
+    // r.jina.ai wraps JSON inside markdown-like content; recover raw array when needed.
+    if (!Array.isArray(rows)) {
+        const asText = typeof rows === 'string' ? rows : JSON.stringify(rows);
+        rows = parseJinaWrappedJson(asText);
+    }
+
     if (!Array.isArray(rows)) {
         throw new Error('Unexpected CTFtime response while loading suggestions.');
     }
@@ -146,13 +263,21 @@ export async function fetchCtftimeSuggestions(limitPerGroup = 6) {
         })
         .sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
 
-    const running = normalized
+    let running = normalized
         .filter((event) => {
             const start = Date.parse(event.start);
             const finish = Date.parse(event.finish);
             return start <= now && now <= finish;
         })
         .slice(0, limitPerGroup);
+
+    if (running.length === 0) {
+        try {
+            running = await fetchRunningFromListFallback(limitPerGroup);
+        } catch {
+            // Keep empty list if fallback fails.
+        }
+    }
 
     const upcoming = normalized
         .filter((event) => Date.parse(event.start) > now)

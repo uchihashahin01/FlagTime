@@ -6,6 +6,10 @@ function formatRange(start, finish) {
     const startDate = new Date(start);
     const finishDate = new Date(finish);
 
+    if (!Number.isFinite(startDate.getTime()) || !Number.isFinite(finishDate.getTime())) {
+        return '';
+    }
+
     return `${startDate.toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',
@@ -19,7 +23,12 @@ function formatRange(start, finish) {
     })}`;
 }
 
-function QuickAddList({ title, items, emptyMessage, onAdd }) {
+function getSuggestionRange(event) {
+    if (event.displayRange) return event.displayRange;
+    return formatRange(event.start, event.finish);
+}
+
+function QuickAddList({ title, items, emptyMessage, onAdd, loadingEventId }) {
     return (
         <div className="quick-add-group">
             <h4 className="quick-add-title">{title}</h4>
@@ -33,10 +42,13 @@ function QuickAddList({ title, items, emptyMessage, onAdd }) {
                             type="button"
                             className="quick-add-item"
                             onClick={() => onAdd(event)}
+                            disabled={loadingEventId === event.ctftimeId}
                             title="Add this event"
                         >
                             <span className="quick-add-item-title">{event.title}</span>
-                            <span className="quick-add-item-time">{formatRange(event.start, event.finish)}</span>
+                            <span className="quick-add-item-time">
+                                {loadingEventId === event.ctftimeId ? 'Adding event...' : getSuggestionRange(event)}
+                            </span>
                         </button>
                     ))}
                 </div>
@@ -53,6 +65,7 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
     const [suggestions, setSuggestions] = useState({ running: [], upcoming: [] });
     const [suggestionsLoading, setSuggestionsLoading] = useState(false);
     const [suggestionsError, setSuggestionsError] = useState('');
+    const [quickAddLoadingId, setQuickAddLoadingId] = useState(null);
 
     const modalRef = useRef(null);
     const closeButtonRef = useRef(null);
@@ -76,6 +89,7 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
         setError('');
         setLoading(false);
         setSuggestionsError('');
+        setQuickAddLoadingId(null);
     }, []);
 
     const handleClose = useCallback(() => {
@@ -113,10 +127,23 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
         }
     }, []);
 
-    const handleQuickAdd = (event) => {
-        onAdd(event);
-        handleClose();
-    };
+    const handleQuickAdd = useCallback(async (event) => {
+        if (!event?.ctftimeId) return;
+
+        setError('');
+        setSuggestionsError('');
+        setQuickAddLoadingId(event.ctftimeId);
+
+        try {
+            const fullEvent = await fetchCtftimeEvent(event.ctftimeId);
+            onAdd(fullEvent);
+            handleClose();
+        } catch (err) {
+            setSuggestionsError(err.message || 'Unable to add this event right now.');
+        } finally {
+            setQuickAddLoadingId(null);
+        }
+    }, [handleClose, onAdd]);
 
     const handleManualSubmit = (e) => {
         e.preventDefault();
@@ -306,12 +333,14 @@ export default function AddEventModal({ isOpen, onClose, onAdd }) {
                                         items={suggestions.running}
                                         emptyMessage="No running CTF events found right now."
                                         onAdd={handleQuickAdd}
+                                        loadingEventId={quickAddLoadingId}
                                     />
                                     <QuickAddList
                                         title="Upcoming"
                                         items={suggestions.upcoming}
                                         emptyMessage="No upcoming CTF events found."
                                         onAdd={handleQuickAdd}
+                                        loadingEventId={quickAddLoadingId}
                                     />
                                 </>
                             )}

@@ -294,6 +294,12 @@
     transform: translateY(-1px);
 }
 
+.quick-add-item:disabled {
+    opacity: 0.65;
+    cursor: wait;
+    transform: none;
+}
+
 .quick-add-item-title {
     font-size: 0.84rem;
     font-weight: 600;
