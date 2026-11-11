@@ -1,194 +1,54 @@
 /**
- * CTFtime API Service
- * Dev: uses Vite proxy (/api/ctftime/…)
- * Prod: uses corsproxy.io to bypass CORS on static hosting
+ * CTFtime data service.
+ *
+ * CTFtime's API does not send Access-Control-Allow-Origin, so a static
+ * GitHub Pages site cannot call it directly from the browser. Rather than
+ * depend on unreliable third-party CORS proxies (corsproxy.io now requires a
+ * paid key, allorigins is frequently down, cors.isomorphic-git returns 403),
+ * the data is snapshotted into same-origin static JSON by
+ * `scripts/sync-ctftime.mjs`, which runs in CI on a schedule.
+ *
+ * Strategy:
+ *   1. Read /ctftime/events.json for the list & quick-add suggestions.
+ *   2. Read /ctftime/event-<id>.json when a snapshot exists.
+ *   3. Fall back to a live fetch through dev proxy / public mirrors only if a
+ *      snapshot is missing, so the app never hard-depends on a proxy.
  */
 
-const isDev = import.meta.env.DEV;
+const BASE = import.meta.env.BASE_URL || '/';
 const REQUEST_TIMEOUT_MS = 12000;
 
-const CTF_LIST_QUERY = 'year=2026&online=-1&format=0&restrictions=-1';
+// A snapshot older than this is treated as stale but still usable.
+const SNAPSHOT_TTL_MS = 1000 * 60 * 60 * 12;
 
-function getCtftimeApiTarget(path) {
-    return `https://ctftime.org/api/v1${path}`;
+function withBase(path) {
+    return `${BASE.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 }
 
-function getProdProxyUrls(path) {
-    const target = getCtftimeApiTarget(path);
-
-    return [
-        `https://corsproxy.io/?url=${encodeURIComponent(target)}`,
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
-        `https://cors.isomorphic-git.org/${target}`,
-    ];
+function fetchWithTimeout(url, init = {}) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    return fetch(url, { ...init, signal: controller.signal }).finally(() => clearTimeout(timer));
 }
 
-function getProdTextProxyUrls(targetUrl) {
-    return [
-        `https://r.jina.ai/http://${targetUrl.replace(/^https?:\/\//i, '')}`,
-        `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`,
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
-    ];
-}
-
-/**
- * Build the fetch URL for a CTFtime API endpoint.
- * In dev → /api/ctftime/events/{id}/  (Vite proxy)
- * In prod → corsproxy.io wrapping the real CTFtime URL
- */
-function buildApiUrl(path) {
-    if (isDev) {
-        return `/api/ctftime${path}`;
-    }
-    return getProdProxyUrls(path)[0];
-}
-
-async function fetchCtftime(path) {
-    const urls = isDev ? [buildApiUrl(path)] : getProdProxyUrls(path);
-    let lastError = null;
-
-    for (const url of urls) {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
-        try {
-            const res = await fetch(url, {
-                headers: {
-                    Accept: 'application/json',
-                },
-                signal: controller.signal,
-            });
-
-            if (!res.ok && (res.status === 403 || res.status === 429 || res.status >= 500) && !isDev) {
-                lastError = new Error(`Proxy responded with ${res.status}.`);
-                continue;
-            }
-
-            return res;
-        } catch (err) {
-            if (err?.name === 'AbortError') {
-                lastError = new Error('CTFtime request timed out. Please try again.');
-                continue;
-            }
-            lastError = err;
-        } finally {
-            clearTimeout(timeoutId);
-        }
-    }
-
-    if (lastError?.message?.includes('timed out')) {
-        throw lastError;
-    }
-
-    throw new Error('Unable to reach CTFtime right now. Proxy service returned 403/429 or is unavailable. Please retry in a moment.');
-}
-
-async function fetchTextWithFallback(urls) {
-    let lastError = null;
-
-    for (const url of urls) {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
-        try {
-            const res = await fetch(url, {
-                headers: {
-                    Accept: 'text/plain,text/html,application/json',
-                },
-                signal: controller.signal,
-            });
-
-            if (!res.ok) {
-                lastError = new Error(`Source responded with ${res.status}.`);
-                continue;
-            }
-
-            const text = await res.text();
-            if (!text || !text.trim()) {
-                lastError = new Error('Source returned an empty response.');
-                continue;
-            }
-
-            return text;
-        } catch (err) {
-            if (err?.name === 'AbortError') {
-                lastError = new Error('CTFtime request timed out. Please try again.');
-                continue;
-            }
-            lastError = err;
-        } finally {
-            clearTimeout(timeoutId);
-        }
-    }
-
-    if (lastError?.message?.includes('timed out')) {
-        throw lastError;
-    }
-
-    throw new Error('Unable to load CTFtime list data right now. Please retry in a moment.');
-}
-
-function parseJinaWrappedJson(text) {
-    const start = text.indexOf('[');
-    const end = text.lastIndexOf(']');
-    if (start === -1 || end === -1 || end <= start) return null;
-
+async function readSnapshot(relativePath) {
     try {
-        const slice = text.slice(start, end + 1);
-        const parsed = JSON.parse(slice);
-        return Array.isArray(parsed) ? parsed : null;
+        const res = await fetchWithTimeout(withBase(relativePath), {
+            headers: { Accept: 'application/json' },
+        });
+        if (!res.ok) return null;
+        return await res.json();
     } catch {
         return null;
     }
 }
 
-function parseRunningRowsFromMarkdown(markdown) {
-    const rows = [];
-    const rowRegex = /^\|\s*\[([^\]]+)\]\(https?:\/\/ctftime\.org\/event\/(\d+)\)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|/gm;
-
-    for (const match of markdown.matchAll(rowRegex)) {
-        const title = match[1].trim();
-        const eventId = match[2].trim();
-        const dateRange = match[3].trim();
-        const format = match[4].trim();
-        const location = match[5].trim();
-
-        rows.push({
-            id: `ctftime-${eventId}`,
-            ctftimeId: Number(eventId),
-            title,
-            start: '',
-            finish: '',
-            displayRange: dateRange,
-            url: `https://ctftime.org/event/${eventId}/`,
-            ctftimeUrl: `https://ctftime.org/event/${eventId}/`,
-            logo: null,
-            format,
-            weight: 0,
-            location,
-            description: '',
-            participants: 0,
-            isCtftime: true,
-            addedAt: new Date().toISOString(),
-        });
-    }
-
-    return rows;
-}
-
-async function fetchRunningFromListFallback(limitPerGroup) {
-    const target = `https://ctftime.org/event/list/?${CTF_LIST_QUERY}&now=true`;
-    const urls = isDev ? [target] : getProdTextProxyUrls(target);
-    const text = await fetchTextWithFallback(urls);
-    return parseRunningRowsFromMarkdown(text).slice(0, limitPerGroup);
-}
-
 /**
  * Extract event ID from a CTFtime URL.
- * Supports: https://ctftime.org/event/1234, https://ctftime.org/event/1234/
+ * Supports: https://ctftime.org/event/1234
  */
 export function parseCtftimeUrl(url) {
-    const trimmed = url.trim();
+    const trimmed = String(url ?? '').trim();
 
     if (!trimmed) {
         throw new Error('Please provide a CTFtime event URL.');
@@ -214,47 +74,164 @@ export function parseCtftimeUrl(url) {
     return match[1];
 }
 
-/**
- * Fetch event details from CTFtime API.
- */
-export async function fetchCtftimeEvent(eventId) {
-    const res = await fetchCtftime(`/events/${eventId}/`);
+function normalizeEvent(raw) {
+    // The JSON snapshot already stores normalized records (id = "ctftime-<n>")
+    // while API responses use the bare numeric id. Accept both so normalizing
+    // twice cannot produce "ctftime-ctftime-<n>" or turn the id into a string.
+    const numericId = Number(
+        raw.ctftimeId ?? String(raw.id ?? '').replace(/^ctftime-/, ''),
+    );
 
-    if (!res.ok) {
-        if (res.status === 404) {
-            throw new Error(`Event #${eventId} not found on CTFtime.`);
-        }
-        throw new Error(`CTFtime API error: ${res.status} ${res.statusText}`);
-    }
-
-    const data = await res.json();
-    return normalizeEvent(data);
+    return {
+        id: `ctftime-${numericId}`,
+        ctftimeId: numericId,
+        title: raw.title,
+        start: raw.start,
+        finish: raw.finish,
+        url: raw.url || '',
+        ctftimeUrl: raw.ctftime_url || `https://ctftime.org/event/${raw.id}/`,
+        logo: raw.logo || null,
+        format: raw.format || 'Unknown',
+        weight: raw.weight ?? 0,
+        location: raw.location || '',
+        description: raw.description || '',
+        participants: raw.participants ?? 0,
+        isCtftime: true,
+        addedAt: new Date().toISOString(),
+    };
 }
 
 /**
- * Fetch quick-add suggestions from CTFtime and split into running/upcoming buckets.
+ * Last-resort live lookup for events not present in the snapshot.
+ * Only used in dev (Vite proxy) or via r.jina.ai, which is the one mirror that
+ * still returns CTFtime JSON reliably.
+ */
+async function fetchLiveEvent(eventId) {
+    const target = `https://ctftime.org/api/v1/events/${eventId}/`;
+
+    const urls = import.meta.env.DEV
+        ? [`/api/ctftime/events/${eventId}/`]
+        : [
+              `https://r.jina.ai/http://ctftime.org/api/v1/events/${eventId}/`,
+              `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`,
+          ];
+
+    let timedOut = false;
+
+    for (const url of urls) {
+        try {
+            const res = await fetchWithTimeout(url, { headers: { Accept: 'application/json' } });
+            if (!res.ok) {
+                if (res.status === 404) {
+                    throw new Error(`Event #${eventId} not found on CTFtime.`);
+                }
+                continue;
+            }
+
+            const text = await res.text();
+
+            // r.jina.ai returns HTTP 200 even when the upstream CTFtime URL is a
+            // 404, and flags it in the body. Surface that as "not found" rather
+            // than silently failing.
+            if (/Target URL returned error 404/i.test(text)) {
+                throw new Error(`Event #${eventId} not found on CTFtime.`);
+            }
+
+            const parsed = extractJson(text);
+            if (parsed && typeof parsed === 'object' && !Array.isArray(parsed) && parsed.id) {
+                return parsed;
+            }
+            continue;
+        } catch (err) {
+            // A definitive 404 must not be masked by a later proxy failure or timeout.
+            if (err?.message?.includes('not found on CTFtime')) throw err;
+
+            if (err?.name === 'AbortError') {
+                timedOut = true;
+            }
+        }
+    }
+
+    if (timedOut) throw new Error('CTFtime request timed out. Please try again.');
+
+    throw new Error(
+        `Event #${eventId} isn't in the local CTFtime snapshot yet. It will appear after the next sync, or you can add it manually.`,
+    );
+}
+
+/**
+ * Recover a JSON object/array from a response that may be plain JSON or wrapped
+ * in text (r.jina.ai adds "Title:"/"Markdown Content:" preamble).
+ */
+function extractJson(text) {
+    if (!text) return null;
+
+    // Fast path: already JSON.
+    try {
+        return JSON.parse(text);
+    } catch {
+        // fall through
+    }
+
+    // Object
+    const objStart = text.indexOf('{');
+    const objEnd = text.lastIndexOf('}');
+    if (objStart !== -1 && objEnd > objStart) {
+        try {
+            return JSON.parse(text.slice(objStart, objEnd + 1));
+        } catch {
+            // fall through
+        }
+    }
+
+    // Array
+    const arrStart = text.indexOf('[');
+    const arrEnd = text.lastIndexOf(']');
+    if (arrStart !== -1 && arrEnd > arrStart) {
+        try {
+            return JSON.parse(text.slice(arrStart, arrEnd + 1));
+        } catch {
+            // fall through
+        }
+    }
+
+    return null;
+}
+
+/**
+ * Fetch a single event. Prefers the bundled snapshot, falls back to a live read.
+ */
+export async function fetchCtftimeEvent(eventId) {
+    const snapshot = await readSnapshot(`ctftime/event-${eventId}.json`);
+    if (snapshot?.event) {
+        return normalizeEvent(snapshot.event);
+    }
+
+    // Fall back to the bulk snapshot (no extra request in the common case).
+    const bulk = await readSnapshot('ctftime/events.json');
+    if (bulk?.events) {
+        const found = bulk.events.find((e) => Number(e.ctftimeId) === Number(eventId));
+        if (found) return normalizeEvent(found);
+    }
+
+    const live = await fetchLiveEvent(eventId);
+    return normalizeEvent(live);
+}
+
+/**
+ * Quick-add suggestions, derived from the static snapshot.
+ * @param {number} limitPerGroup
  */
 export async function fetchCtftimeSuggestions(limitPerGroup = 6) {
-    const res = await fetchCtftime('/events/');
+    const snapshot = await readSnapshot('ctftime/events.json');
 
-    if (!res.ok) {
-        throw new Error(`CTFtime API error: ${res.status} ${res.statusText}`);
-    }
-
-    let rows = await res.json();
-
-    // r.jina.ai wraps JSON inside markdown-like content; recover raw array when needed.
-    if (!Array.isArray(rows)) {
-        const asText = typeof rows === 'string' ? rows : JSON.stringify(rows);
-        rows = parseJinaWrappedJson(asText);
-    }
-
-    if (!Array.isArray(rows)) {
-        throw new Error('Unexpected CTFtime response while loading suggestions.');
+    if (!snapshot?.events?.length) {
+        throw new Error('CTFtime snapshot is not available yet. Please add the event manually or retry shortly.');
     }
 
     const now = Date.now();
-    const normalized = rows
+
+    const normalized = snapshot.events
         .map(normalizeEvent)
         .filter((event) => {
             const start = Date.parse(event.start);
@@ -263,48 +240,24 @@ export async function fetchCtftimeSuggestions(limitPerGroup = 6) {
         })
         .sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
 
-    let running = normalized
-        .filter((event) => {
-            const start = Date.parse(event.start);
-            const finish = Date.parse(event.finish);
-            return start <= now && now <= finish;
-        })
+    const running = normalized
+        .filter((e) => Date.parse(e.start) <= now && now <= Date.parse(e.finish))
         .slice(0, limitPerGroup);
-
-    if (running.length === 0) {
-        try {
-            running = await fetchRunningFromListFallback(limitPerGroup);
-        } catch {
-            // Keep empty list if fallback fails.
-        }
-    }
 
     const upcoming = normalized
-        .filter((event) => Date.parse(event.start) > now)
+        .filter((e) => Date.parse(e.start) > now)
         .slice(0, limitPerGroup);
 
-    return { running, upcoming };
+    return {
+        running,
+        upcoming,
+        generatedAt: snapshot.generatedAt || null,
+        isStale: isStale(snapshot.generatedAt),
+    };
 }
 
-/**
- * Normalize raw CTFtime API response into our app shape.
- */
-function normalizeEvent(raw) {
-    return {
-        id: `ctftime-${raw.id}`,
-        ctftimeId: raw.id,
-        title: raw.title,
-        start: raw.start,
-        finish: raw.finish,
-        url: raw.url,
-        ctftimeUrl: raw.ctftime_url || `https://ctftime.org/event/${raw.id}/`,
-        logo: raw.logo || null,
-        format: raw.format || 'Unknown',
-        weight: raw.weight || 0,
-        location: raw.location || '',
-        description: raw.description || '',
-        participants: raw.participants || 0,
-        isCtftime: true,
-        addedAt: new Date().toISOString(),
-    };
+function isStale(generatedAt) {
+    const ts = Date.parse(generatedAt);
+    if (!Number.isFinite(ts)) return true;
+    return Date.now() - ts > SNAPSHOT_TTL_MS;
 }

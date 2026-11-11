@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://uchihashahin01.github.io/FlagTime/">
+  <a href="https://uchihashahin.me/FlagTime/">
     <img src="https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-e040fb?style=for-the-badge&labelColor=0a0e1a" alt="Live Demo" />
   </a>
 </p>
@@ -36,9 +36,23 @@
 
 ### Use the Live Site (No Install)
 
-👉 **[uchihashahin01.github.io/FlagTime](https://uchihashahin01.github.io/FlagTime/)**
+👉 **[uchihashahin.me/FlagTime](https://uchihashahin.me/FlagTime/)**
 
 Just open the link and start adding events!
+
+### How CTFtime data stays fresh
+
+CTFtime's API does not send CORS headers, so a static site cannot call it from
+the browser. Instead of relying on brittle third-party CORS proxies, a scheduled
+GitHub Action (`.github/workflows/sync-ctftime.yml`) fetches CTFtime every 3
+hours and commits a snapshot to `public/ctftime/events.json`. The app reads that
+same-origin file, so there is no proxy in the request path and nothing to break.
+
+Refresh the snapshot manually at any time:
+
+```bash
+npm run sync:ctftime
+```
 
 ### Run Locally
 
@@ -105,9 +119,9 @@ Open **http://localhost:5173** in your browser.
 | **Vite** | Lightning-fast build tool |
 | **React** | Component-based UI |
 | **Vanilla CSS** | Custom design system with CSS variables |
-| **CTFtime API** | Auto-fetch event data |
+| **CTFtime API** | Event data, snapshotted to static JSON by CI (no CORS proxy needed) |
 | **localStorage** | Client-side persistence |
-| **GitHub Actions** | Automated deployment to GitHub Pages |
+| **GitHub Actions** | Automated deployment to GitHub Pages + scheduled CTFtime data sync |
 
 ---
 
@@ -131,7 +145,12 @@ FlagTime/
 │   ├── index.css                # Design system & global styles
 │   └── main.jsx                 # Entry point
 ├── .github/workflows/
-│   └── deploy.yml               # GitHub Pages deployment
+│   ├── deploy.yml               # GitHub Pages deployment
+│   └── sync-ctftime.yml         # Scheduled CTFtime snapshot refresh
+├── scripts/
+│   └── sync-ctftime.mjs         # Fetches CTFtime -> public/ctftime/*.json
+├── public/
+│   └── ctftime/events.json      # Generated snapshot served to the app
 ├── index.html
 ├── vite.config.js
 └── package.json
