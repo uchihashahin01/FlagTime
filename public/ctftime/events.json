@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T16:49:52.782Z",
+  "generatedAt": "2026-11-11T23:56:26.160Z",
   "source": "ctftime.org",
   "count": 31,
   "events": [
@@ -128,7 +128,7 @@
       "weight": 1,
       "location": "",
       "description": "CSAW CTF is one of the oldest and biggest CTFs. Designed as an entry-level, jeopardy-style CTF, this competition is for students who are trying to break into the field of security, as well as for advanced students and industry professionals who want to practice their skills.",
-      "participants": 63,
+      "participants": 65,
       "isCtftime": true
     },
     {
@@ -144,7 +144,7 @@
       "weight": 0,
       "location": "",
       "description": "TVX CTF is a cybersecurity Capture The Flag competition organized by Tech Visions.\r\n\r\nChallenge categories include:\r\n\r\n• DFIR (Digital Forensics & Incident Response)\r\n• Cloud Security\r\n• Malware Analysis\r\n• Reverse Engineering\r\n• Pwn (Binary Exploitation)\r\n• Web Exploitation\r\n• Cryptography\r\n• OSINT (Open-Source Intelligence)\r\n\r\nTest your skills, solve real-world-inspired cybersecurity challenges, and compete with other security enthusiasts in a hands-on environment.\r\n\r\nOrganized by Tech Visions.",
-      "participants": 59,
+      "participants": 61,
       "isCtftime": true
     },
     {
@@ -160,7 +160,7 @@
       "weight": 37,
       "location": "",
       "description": "The Platypwn 2026 is an online Jeopardy CTF which offers easy challenges for beginners, but also medium and difficult challenges for advanced players.\r\n\r\nSee https://platypwnies.de/events/platypwn for further details.",
-      "participants": 122,
+      "participants": 124,
       "isCtftime": true
     },
     {
@@ -192,7 +192,7 @@
       "weight": 24.23,
       "location": "",
       "description": "h4ckc0n is a 24-hour international Jeopardy-style Capture The Flag competition.\r\n\r\nEVENT URL UP! REGISTER NOW!\r\n\r\nCategories: Reverse Engineering, Web-exploitation, Forensics, AI/ML, Web3, OSINT, PWN, Cryptography, Miscellaneous\r\n\r\nThe competition is designed to accommodate teams of varying skill levels, with a diverse challenge set covering multiple areas of cybersecurity.\r\n\r\nDuration: 24 hours\r\nFormat: Jeopardy-style CTF\r\nMode: Online\r\nTeam-based: Yes\r\n\r\nJoin the discord server: https://discord.gg/kw8J5r2ZWh\r\n\r\n",
-      "participants": 59,
+      "participants": 63,
       "isCtftime": true
     },
     {
@@ -320,7 +320,7 @@
       "weight": 45.76,
       "location": "",
       "description": "Qualifications for fifth edition of LakeCTF\r\n\r\nold discord server here for discussion: https://discord.gg/8FHmzT5aGM \r\n\r\nnew discord server in your invite email",
-      "participants": 35,
+      "participants": 36,
       "isCtftime": true
     },
     {
@@ -351,7 +351,7 @@
       "format": "Jeopardy",
       "weight": 0,
       "location": "Russia",
-      "description": "CyberNSK 2027 is one of the largest cybersecurity competitions in Siberia, organized by Siberian Security League in collaboration with Novosibirsk State Technical University (NSTU NETI), Department of Information Security.\r\n\r\nThe online qualification round is a 12-hour Jeopardy-style CTF. Teams of up to 5 participants (school and university students) compete by solving practical security challenges and submitting flags.\r\n\r\n✦ Start — November 28 at 12:00 PM (MSK)✦\r\n✦ End — November 29 at 00:00 PM (MSK)✦\r\n\r\nThe competition uses a dynamic scoring system: the fewer teams solve a task, the more points it is worth.\r\n\r\nCategories include:\r\n\r\nWeb\r\n\r\nCrypto\r\n\r\nReverse Engineering\r\n\r\nPwn\r\n\r\nForensics\r\n\r\nAI\r\n\r\nHardware\r\n\r\nand others",
+      "description": "CyberNSK 2027 is one of the largest cybersecurity competitions in Siberia, organized by Siberian Security League in collaboration with Novosibirsk State Technical University (NSTU NETI), Department of Information Security.\r\n\r\nThe online qualification round is a 12-hour Jeopardy-style CTF. Teams of up to 5 participants (school and university students) compete by solving practical security challenges and submitting flags.\r\n\r\n✦ Start — November 28 at 12:00 PM (MSK)✦\r\n✦ End — November 29 at 00:00 PM (MSK)✦\r\n\r\nTeams that have passed the qualifying stage and reside in CIS countries or China are invited to the in-person final.\r\n\r\nThe competition uses a dynamic scoring system: the fewer teams solve a task, the more points it is worth.\r\n\r\nCategories include:\r\n\r\nWeb\r\n\r\nCrypto\r\n\r\nReverse Engineering\r\n\r\nPwn\r\n\r\nForensics\r\n\r\nAI\r\n\r\nHardware\r\n\r\nand others",
       "participants": 10,
       "isCtftime": true
     },
