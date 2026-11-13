@@ -1,40 +1,8 @@
 {
-  "generatedAt": "2026-11-13T13:47:02.567Z",
+  "generatedAt": "2026-11-13T21:08:18.215Z",
   "source": "ctftime.org",
-  "count": 28,
+  "count": 26,
   "events": [
-    {
-      "id": "ctftime-3339",
-      "ctftimeId": 3339,
-      "title": "SpookyCTF 2026",
-      "start": "2026-11-06T17:00:00+00:00",
-      "finish": "2026-11-07T17:00:00+00:00",
-      "url": "https://spooky.ctfd.io/",
-      "ctftimeUrl": "https://ctftime.org/event/3339/",
-      "logo": "https://ctftime.org//media/events/spookyctf_2026_1.PNG",
-      "format": "Jeopardy",
-      "weight": 0,
-      "location": "",
-      "description": "EVENT TIME HAS BEEN SHIFTED TO START AND END 2 HOURS AFTER TIME LISTED ABOVE\r\n\r\nREGISTRATION IS NOW AVAILABLE!\r\n\r\nBOO!!\r\n\r\nWelcome to SpookyCTF 2026! Organized by the New Jersey Institute of Technology's Cyber Security Network (formerly known as NICC), this is our annual Halloween CTF event, open to all!\r\n\r\nWe've made this CTF beginner-friendly, with a mix of harder challenges. Our mission is to help beginners develop professionally in cybersecurity while still keeping things fun! You'll be pushed to stay curious and strengthen your reasoning skills across challenges of varying difficulty.\r\n\r\nOur challenge categories include Binary Exploitation/Reverse Engineering, Cryptography, Forensics, OSINT, Web, and Misc. Expect weird but fun challenges developed by our team at CSN.\r\n\r\nSpookyCTF is hybrid — in person at NJIT and open to virtual attendees!\r\n\r\nJoin our Discord to tap in: https://discord.gg/NeHyp5fFHW\r\n\r\nAI assistance is allowed but discouraged. Learning is part of the challenge — use your brain!\r\nAutomated AI agents for solving challenges are strictly forbidden. Any detected automated AI usage will result in disqualification.",
-      "participants": 131,
-      "isCtftime": true
-    },
-    {
-      "id": "ctftime-3242",
-      "ctftimeId": 3242,
-      "title": "BlackAlps CTF 2026",
-      "start": "2026-11-06T18:15:00+00:00",
-      "finish": "2026-11-06T22:30:00+00:00",
-      "url": "https://blackalps.ch/ba-26/contest",
-      "ctftimeUrl": "https://ctftime.org/event/3242/",
-      "logo": "https://ctftime.org//media/events/black-alps-v5-logo-black_HIGH-RES.png",
-      "format": "Jeopardy",
-      "weight": 0,
-      "location": "Switzerland, Yverdon-les-Bains",
-      "description": "The BlackAlps CTF will be held at the end of the BlackAlps conference in Yverdon-les-Bains in Switzerland. It's a CTF for all level including from beginner up to advanced team.\r\n\r\nThe CTF will last 5 hours and be on site for about 300 people.\r\n\r\nThere is no specific categories.\r\n\r\nRegistration is mandatory.\r\n\r\nWelcome at 18:45. Start at 19:00. End at 23:30. Awards ceremony at 23:45.",
-      "participants": 26,
-      "isCtftime": true
-    },
     {
       "id": "ctftime-3455",
       "ctftimeId": 3455,
@@ -112,7 +80,7 @@
       "weight": 37,
       "location": "",
       "description": "The Platypwn 2026 is an online Jeopardy CTF which offers easy challenges for beginners, but also medium and difficult challenges for advanced players.\r\n\r\nSee https://platypwnies.de/events/platypwn for further details.",
-      "participants": 161,
+      "participants": 175,
       "isCtftime": true
     },
     {
@@ -128,7 +96,7 @@
       "weight": 0,
       "location": "",
       "description": "This event will be postponed to Fri, 20 Nov. 2026, 18:00 EST — Sun, 22 Nov. 2026, 18:00 EST\r\n\r\nOur challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint, misc.). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/",
-      "participants": 173,
+      "participants": 181,
       "isCtftime": true
     },
     {
@@ -144,7 +112,7 @@
       "weight": 24.23,
       "location": "",
       "description": "h4ckc0n is a 24-hour international Jeopardy-style Capture The Flag competition.\r\n\r\nEVENT URL UP! REGISTER NOW!\r\n\r\nCategories: Reverse Engineering, Web-exploitation, Forensics, AI/ML, Web3, OSINT, PWN, Cryptography, Miscellaneous\r\n\r\nThe competition is designed to accommodate teams of varying skill levels, with a diverse challenge set covering multiple areas of cybersecurity.\r\n\r\nDuration: 24 hours\r\nFormat: Jeopardy-style CTF\r\nMode: Online\r\nTeam-based: Yes\r\n\r\nJoin the discord server: https://discord.gg/kw8J5r2ZWh\r\n\r\n",
-      "participants": 93,
+      "participants": 102,
       "isCtftime": true
     },
     {
@@ -160,7 +128,7 @@
       "weight": 0,
       "location": "",
       "description": "InIt CTF is HII's (Hackers in India) beginner-focused Capture The Flag event, free and open to participants across India and internationally. 8 hours, Jeopardy-style, solo or teams of up to 4, across Web, Crypto, Forensics, OSINT, and Misc — mostly easy/medium with a couple of harder challenges for experienced players. This edition is sponsored by .xyz, who are providing free domain codes for participants, with additional sponsors being confirmed. Register at\r\n\r\nhackersinindia.com/init-ctf.",
-      "participants": 36,
+      "participants": 39,
       "isCtftime": true
     },
     {
@@ -176,7 +144,7 @@
       "weight": 0,
       "location": "",
       "description": "EyesOpenCTF 2026 is a FREE CTF competition organized as part of the 7th edition of EOCON.\r\n\r\nThis year, the competition goes far beyond a traditional CTF.\r\nYou are not simply joining to solve isolated challenges. You are entering The Convergence, a live 48-hour cyber adventure in which reality itself is beginning to fracture.\r\nAcross more than 40 challenges and 8 disciplines, teams will investigate corrupted systems, recover hidden Reality Fragments, unlock classified dossiers, expose compromised actors, and gradually reconstruct the truth behind a phenomenon threatening the entire world.\r\n\r\nEvery flag matters.\r\nEach solved challenge can reveal new intelligence, unlock characters and locations, alter the mission briefing, and move the story forward in real time. The competition platform becomes a living investigation that evolves with the progress of the Operators.\r\n\r\nExpect  : \r\n- web exploitation, \r\n- digital forensics, \r\n- reverse engineering, \r\n- binary exploitation, \r\n- cryptography, \r\n- OSINT, \r\n- AI security, and more—woven into a single coherent mission unlike any previous EyesOpenCTF.\r\n\r\nBuilt for teams from around the world and open to different experience levels, EyesOpenCTF is both a proving ground and an immersive narrative experience where competitors can learn, compete, get noticed, and join a fast-growing international cybersecurity community.\r\n\r\nAs part of EOCON, the competition also connects participants with experts, researchers, recruiters, entrepreneurs, and emerging talent from Africa and beyond. It is a place where technical ability meets storytelling, where discoveries change the mission, and where tomorrow’s collaborations, careers, and opportunities begin.\r\n\r\nForm your team. Enter the Protocol. Recover the Fragments.\r\n\r\nRegister: https://eyesopensecurity.com/ctf-briefing.html\r\n\r\nDirect Form: https://eyesopensecurity.com/?modal=ctf\r\n\r\nSPONSORS :\r\n- CyberDefenders (https://cyberdefenders.org)\r\n- JetBrains (https://jetbrains.com)\r\n- Netticket (https://netticket.net)\r\n- ExamBoot (https://examboot.net)",
-      "participants": 27,
+      "participants": 30,
       "isCtftime": true
     },
     {
@@ -192,7 +160,7 @@
       "weight": 73.17,
       "location": "",
       "description": "We're excited to announce GlacierCTF 2026 for its fifth edition, a 24-hour jeopardy CTF organized by LosFuzzys.\r\n\r\nJoin our discord at:\r\nhttps://discord.gg/DFYnRAME23\r\n\r\n- Hex-Rays (hex-rays.com)\r\n- ISEC @ Graz University of Technology (isec.tugraz.at)\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
-      "participants": 86,
+      "participants": 93,
       "isCtftime": true
     },
     {
@@ -208,7 +176,7 @@
       "weight": 0,
       "location": "",
       "description": "Outback Overflow is a free online jeopardy-style CTF built for high schoolers across Australia. Run by the High School Cybersecurity Community, it's designed to be a stepping stone for students getting into cyber security, whether you've never touched a terminal or you're already popping shells.\r\n\r\nOur goal is simple: grow the number of young people in cyber security and give Australian high schoolers a CTF they can call their own.\r\n\r\nGold Sponsors: \r\n* Tanto Security (https://tantosec.com)\r\n* Try Hack Me (https://tryhackme.com)\r\n\r\nSilver Sponsors\r\n* gen.xyz (https://gen.xyz)\r\n* UTS CSEC (https://utscyber.org)\r\n* Skillbit (https://skillbit.com)\r\n* Active IT prep (https://activeitprep.com)\r\n\r\nHosting Partners:\r\n* Binary Lane (https://www.binarylane.com.au)\r\n\r\nUniversity Supports:\r\n* UNSW Security Society (https://unswsecurity.com)\r\n\r\n(if you would like to sponsor please reach out to outreach@hscyber.org or join our discord!)\r\n\r\nJoin our discord to talk to other players!\r\nhttps://discord.gg/xWPndqMCfA\r\n\r\nEvent Site:\r\nhttps://oo26.hscyber.org/",
-      "participants": 12,
+      "participants": 13,
       "isCtftime": true
     },
     {
@@ -240,7 +208,7 @@
       "weight": 37,
       "location": "",
       "description": "Crate-CTF is an annual Capture The Flag (CTF) competition organised by the Swedish Defence Research Agency in collaboration with the Swedish Armed Forces, designed to introduce high school and university students to the field of cybersecurity. This year we return for our seventh CTF, with challenges for all skill levels from beginners to seasoned CTF players. The challenges are categorised into web exploitation, reverse engineering, binary exploitation, cryptography, forensics, OSINT, networking and the all-encompassing \"other\".\r\n\r\nWhile the event will be conducted in Swedish, international participants are also welcome to join (using translation tools as needed). Communication with challenge authors and administrators can be conducted in English.",
-      "participants": 38,
+      "participants": 39,
       "isCtftime": true
     },
     {
@@ -288,7 +256,7 @@
       "weight": 0,
       "location": "",
       "description": "L3m0n CTF is the annual flagship capture-the-flag competition of Amrita Vishwa Vidyapeetham, Coimbatore, hosted by TIFAC-CORE in Cyber Security. This is a team-based event: teams of 1 to 4 players. The online prelims is Jeopardy-style and run for 12 hours (10:00 to 22:00 IST, 04:30 to 16:30 UTC, on 28 November 2026). The top teams are invited to on-campus finals in Coimbatore. Challenges span web, pwn, reverse engineering, cryptography, forensics, OSINT and miscellaneous, with extra tracks in AI and LLM security, Web3 and hardware, IoT and RF. This edition is a broadcast themed on the cartoons we grew up with. Open to all, with a beginner category that teaches the basics. Registration opens soon on l3m0nctf.xyz.",
-      "participants": 28,
+      "participants": 29,
       "isCtftime": true
     },
     {
@@ -336,7 +304,7 @@
       "weight": 0,
       "location": "",
       "description": "x3CTF is a cute little jeopardy-style CTF with web, pwn, rev, crypto, and misc challs!\r\n\r\nx3CTF 2026 will run from Dec 4th 18:00 UTC until Dec 6th 18:00 UTC (48h). Be on the website a few minutes early for a fun surprise ^_^.",
-      "participants": 16,
+      "participants": 17,
       "isCtftime": true
     },
     {
@@ -352,7 +320,7 @@
       "weight": 79.51,
       "location": "",
       "description": "Team bi0s invites you to our prestigious bi0sCTF 2026, a premier hacking event designed for hackers of all generations. We are dedicated to crafting challenges that incorporate the latest vulnerabilities, responsibly pushing the boundaries of innovation to ensure a delightful and enriching experience for all participants.\r\n\r\nStay tuned for official updates by following us on https://twitter.com/teambi0s.",
-      "participants": 29,
+      "participants": 30,
       "isCtftime": true
     },
     {
@@ -416,7 +384,7 @@
       "weight": 77.38,
       "location": "",
       "description": "BackdoorCTF is the flagship event of InfoSecIITR.\r\n\r\nCategories will include Pwn, Rev, Web, Crypto, Forensics, Misc\r\n\r\nDiscord invite for the competition is https://discord.gg/chHtsSTQ2\r\n\r\nSupported by our Sponsors:\r\n\r\nInfrastructure Sponsored by: \r\n- Google Cloud (https://goo.gle/ctfsponsorship)\r\n\r\nOther Sponsors for BackdoorCTF 2026 will be announced soon.\r\n\r\nHappy Hacking!",
-      "participants": 25,
+      "participants": 26,
       "isCtftime": true
     },
     {
