@@ -1,24 +1,8 @@
 {
-  "generatedAt": "2026-11-14T04:32:27.634Z",
+  "generatedAt": "2026-11-14T12:50:28.568Z",
   "source": "ctftime.org",
-  "count": 26,
+  "count": 25,
   "events": [
-    {
-      "id": "ctftime-3455",
-      "ctftimeId": 3455,
-      "title": "Mimic",
-      "start": "2026-11-07T12:00:00+00:00",
-      "finish": "2026-11-08T12:00:00+00:00",
-      "url": "https://ctf.rarebytehub.com/events/mimic",
-      "ctftimeUrl": "https://ctftime.org/event/3455/",
-      "logo": "https://ctftime.org//media/events/rare-byte-hub_1.png",
-      "format": "Jeopardy",
-      "weight": 0,
-      "location": "",
-      "description": "Mimic is an online Jeopardy-style CTF by Rare Byte Hub. Some challenges are exactly what they look like, and some aren't. Figure out which is which. There's something for everyone, from beginners to experienced players. Teams of 1-4 members.",
-      "participants": 42,
-      "isCtftime": true
-    },
     {
       "id": "ctftime-3499",
       "ctftimeId": 3499,
@@ -112,7 +96,7 @@
       "weight": 24.23,
       "location": "",
       "description": "h4ckc0n is a 24-hour international Jeopardy-style Capture The Flag competition.\r\n\r\nEVENT URL UP! REGISTER NOW!\r\n\r\nCategories: Reverse Engineering, Web-exploitation, Forensics, AI/ML, Web3, OSINT, PWN, Cryptography, Miscellaneous\r\n\r\nThe competition is designed to accommodate teams of varying skill levels, with a diverse challenge set covering multiple areas of cybersecurity.\r\n\r\nDuration: 24 hours\r\nFormat: Jeopardy-style CTF\r\nMode: Online\r\nTeam-based: Yes\r\n\r\nJoin the discord server: https://discord.gg/kw8J5r2ZWh\r\n\r\n",
-      "participants": 106,
+      "participants": 120,
       "isCtftime": true
     },
     {
@@ -128,7 +112,7 @@
       "weight": 0,
       "location": "",
       "description": "InIt CTF is HII's (Hackers in India) beginner-focused Capture The Flag event, free and open to participants across India and internationally. 8 hours, Jeopardy-style, solo or teams of up to 4, across Web, Crypto, Forensics, OSINT, and Misc — mostly easy/medium with a couple of harder challenges for experienced players. This edition is sponsored by .xyz, who are providing free domain codes for participants, with additional sponsors being confirmed. Register at\r\n\r\nhackersinindia.com/init-ctf.",
-      "participants": 40,
+      "participants": 45,
       "isCtftime": true
     },
     {
@@ -160,7 +144,7 @@
       "weight": 73.17,
       "location": "",
       "description": "We're excited to announce GlacierCTF 2026 for its fifth edition, a 24-hour jeopardy CTF organized by LosFuzzys.\r\n\r\nJoin our discord at:\r\nhttps://discord.gg/DFYnRAME23\r\n\r\n- Hex-Rays (hex-rays.com)\r\n- ISEC @ Graz University of Technology (isec.tugraz.at)\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
-      "participants": 93,
+      "participants": 98,
       "isCtftime": true
     },
     {
@@ -176,7 +160,7 @@
       "weight": 0,
       "location": "",
       "description": "Outback Overflow is a free online jeopardy-style CTF built for high schoolers across Australia. Run by the High School Cybersecurity Community, it's designed to be a stepping stone for students getting into cyber security, whether you've never touched a terminal or you're already popping shells.\r\n\r\nOur goal is simple: grow the number of young people in cyber security and give Australian high schoolers a CTF they can call their own.\r\n\r\nGold Sponsors: \r\n* Tanto Security (https://tantosec.com)\r\n* Try Hack Me (https://tryhackme.com)\r\n\r\nSilver Sponsors\r\n* gen.xyz (https://gen.xyz)\r\n* UTS CSEC (https://utscyber.org)\r\n* Skillbit (https://skillbit.com)\r\n* Active IT prep (https://activeitprep.com)\r\n\r\nHosting Partners:\r\n* Binary Lane (https://www.binarylane.com.au)\r\n\r\nUniversity Supports:\r\n* UNSW Security Society (https://unswsecurity.com)\r\n\r\n(if you would like to sponsor please reach out to outreach@hscyber.org or join our discord!)\r\n\r\nJoin our discord to talk to other players!\r\nhttps://discord.gg/xWPndqMCfA\r\n\r\nEvent Site:\r\nhttps://oo26.hscyber.org/",
-      "participants": 13,
+      "participants": 14,
       "isCtftime": true
     },
     {
@@ -240,7 +224,7 @@
       "weight": 45.76,
       "location": "",
       "description": "Qualifications for fifth edition of LakeCTF\r\n\r\nold discord server here for discussion: https://discord.gg/8FHmzT5aGM \r\n\r\nnew discord server in your invite email",
-      "participants": 40,
+      "participants": 41,
       "isCtftime": true
     },
     {
@@ -256,7 +240,7 @@
       "weight": 0,
       "location": "",
       "description": "L3m0n CTF is the annual flagship capture-the-flag competition of Amrita Vishwa Vidyapeetham, Coimbatore, hosted by TIFAC-CORE in Cyber Security. This is a team-based event: teams of 1 to 4 players. The online prelims is Jeopardy-style and run for 12 hours (10:00 to 22:00 IST, 04:30 to 16:30 UTC, on 28 November 2026). The top teams are invited to on-campus finals in Coimbatore. Challenges span web, pwn, reverse engineering, cryptography, forensics, OSINT and miscellaneous, with extra tracks in AI and LLM security, Web3 and hardware, IoT and RF. This edition is a broadcast themed on the cartoons we grew up with. Open to all, with a beginner category that teaches the basics. Registration opens soon on l3m0nctf.xyz.",
-      "participants": 29,
+      "participants": 30,
       "isCtftime": true
     },
     {
@@ -304,7 +288,7 @@
       "weight": 0,
       "location": "",
       "description": "x3CTF is a cute little jeopardy-style CTF with web, pwn, rev, crypto, and misc challs!\r\n\r\nx3CTF 2026 will run from Dec 4th 18:00 UTC until Dec 6th 18:00 UTC (48h). Be on the website a few minutes early for a fun surprise ^_^.",
-      "participants": 17,
+      "participants": 18,
       "isCtftime": true
     },
     {
@@ -336,7 +320,7 @@
       "weight": 59,
       "location": "",
       "description": "niteCTF, hosted by Cryptonite, is designed to help students explore new & diverse areas of cybersecurity while providing a platform for experienced players to sharpen their skills. The CTF features a wide range of challenges spanning multiple domains including Hardware Security, Cryptography, Web Exploitation, Digital Forensics, Binary Exploitation, Reverse Engineering, and more!\r\n\r\n~ hosted by <a href=\"https://cryptonitemit.in\" target=\"_blank\">Cryptonite</a>\r\n\r\nIndustry Sponsor: <a href=\"https://hex-rays.com/\">Hex-Rays</a>\r\n\r\nInfra sponsored by <a href=\"https://goo.gle/ctfsponsorship\" target=\"_blank\">goo.gle/ctfsponsorship</a>",
-      "participants": 69,
+      "participants": 70,
       "isCtftime": true
     },
     {
