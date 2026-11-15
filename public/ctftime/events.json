@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-14T19:39:23.096Z",
+  "generatedAt": "2026-11-15T00:37:45.632Z",
   "source": "ctftime.org",
-  "count": 26,
+  "count": 30,
   "events": [
     {
       "id": "ctftime-3499",
@@ -16,6 +16,22 @@
       "weight": 0,
       "location": "",
       "description": "CyberZerk CTF 2026 is a free, online Jeopardy-style CTF for all skill levels, organized by the CyberZerk association. It runs from November 9 (14:00 CET) to November 22 (18:00 CET). Challenges cover web, crypto, forensics, steganography and social engineering. Registration is individual. Donations to the association are optional and never required to play. Rules and registration: https://ctf.cyberzerk.fr",
+      "participants": 0,
+      "isCtftime": true
+    },
+    {
+      "id": "ctftime-3504",
+      "ctftimeId": 3504,
+      "title": "WRAVEN CTF 2026",
+      "start": "2026-11-12T13:00:00+00:00",
+      "finish": "2026-11-13T17:00:00+00:00",
+      "url": "https://ctf.wraven.org/",
+      "ctftimeUrl": "https://ctftime.org/event/3504/",
+      "logo": "https://ctftime.org//media/events/event-logo-2048.png",
+      "format": "Jeopardy",
+      "weight": 0,
+      "location": "",
+      "description": "WRAVEN CTF 2026 is a free, 28-hour jeopardy CTF built for beginner to intermediate players. It runs online and in person at the WMU Cybersecurity Summit in Kalamazoo, Michigan.\r\n\r\n50+ challenges across web, crypto, forensics, OSINT, pwn and reverse engineering, from easy warm-ups to a handful of hard ones. Scoring is dynamic: each challenge starts at 500 points and drops toward 100 as more teams solve it.\r\n\r\nTeams: up to 4 players. One team per player.\r\n\r\nBrackets:\r\n- Open (online): anyone, anywhere. Recognition only.\r\n- Undergraduate, High School and Professional (in person): teams playing at the Summit in the WMU Student Center. In-person play ends at 3 PM ET on Nov 12, and winners are announced at the closing remarks.\r\n\r\nFlag format: WMU{...}\r\n\r\nRules: https://ctf.wraven.org/#rules\r\nAI chat tools are fine. AI agents must not interact with the CTF platform or the challenge servers.\r\n\r\nQuestions? Join the WRAVEN Discord: https://discord.gg/ZkkeEQ2zs",
       "participants": 0,
       "isCtftime": true
     },
@@ -52,6 +68,22 @@
       "isCtftime": true
     },
     {
+      "id": "ctftime-3501",
+      "ctftimeId": 3501,
+      "title": "Algolympiad CTF 2026",
+      "start": "2026-11-13T14:00:00+00:00",
+      "finish": "2026-11-15T14:00:00+00:00",
+      "url": "https://cyber.algolymp.com/events/a814a7cc-4e23-45f6-a51e-f071aadc8942?lang=en",
+      "ctftimeUrl": "https://ctftime.org/event/3501/",
+      "logo": "https://ctftime.org//media/events/logo_20.jpg",
+      "format": "Jeopardy",
+      "weight": 0,
+      "location": "Romania",
+      "description": "Algolympiad CTF 2026 – Qualifications\r\n\r\nGet ready for Algolympiad CTF 2026 Qualifiers\r\n\r\nFrom November 13–15, 2026, participants will face 15+ cybersecurity challenges, testing their skills across different areas of cybersecurity.\r\n\r\nWhether you're a high-school student or studying at university, this is your opportunity to prove what you can do.\r\n\r\nQualifiers: November 13–15, 2026\r\nThe qualification round will determine the 40 competitors from Romania who advance to the in-person finals, divided into two categories:\r\n\r\nHigh School & Younger: The top 20 eligible competitors from Romania.\r\nUniversity: The top 20 eligible university students from Romania.\r\nGrand Finals: December 6, 2026\r\n\r\nThe 30 finalists will compete in person at Mihai Viteazul High School, Bucharest, Romania, for the ultimate challenge and the title of Algolympiad CTF 2026 Champion in their respective categories. Only romanian students are eligible to qualify",
+      "participants": 0,
+      "isCtftime": true
+    },
+    {
       "id": "ctftime-3082",
       "ctftimeId": 3082,
       "title": "Platypwn 2026",
@@ -65,22 +97,6 @@
       "location": "",
       "description": "The Platypwn 2026 is an online Jeopardy CTF which offers easy challenges for beginners, but also medium and difficult challenges for advanced players.\r\n\r\nSee https://platypwnies.de/events/platypwn for further details.",
       "participants": 175,
-      "isCtftime": true
-    },
-    {
-      "id": "ctftime-3049",
-      "ctftimeId": 3049,
-      "title": "WolvCTF 2026",
-      "start": "2026-11-13T23:00:00+00:00",
-      "finish": "2026-11-15T23:00:00+00:00",
-      "url": "https://wolvctf.io/",
-      "ctftimeUrl": "https://ctftime.org/event/3049/",
-      "logo": "https://ctftime.org//media/events/wolverine-logo-square1_1.jpg",
-      "format": "Jeopardy",
-      "weight": 0,
-      "location": "",
-      "description": "This event will be postponed to Fri, 20 Nov. 2026, 18:00 EST — Sun, 22 Nov. 2026, 18:00 EST\r\n\r\nOur challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint, misc.). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/",
-      "participants": 181,
       "isCtftime": true
     },
     {
@@ -128,7 +144,7 @@
       "weight": 0,
       "location": "",
       "description": "EyesOpenCTF 2026 is a FREE CTF competition organized as part of the 7th edition of EOCON.\r\n\r\nThis year, the competition goes far beyond a traditional CTF.\r\nYou are not simply joining to solve isolated challenges. You are entering The Convergence, a live 48-hour cyber adventure in which reality itself is beginning to fracture.\r\nAcross more than 40 challenges and 8 disciplines, teams will investigate corrupted systems, recover hidden Reality Fragments, unlock classified dossiers, expose compromised actors, and gradually reconstruct the truth behind a phenomenon threatening the entire world.\r\n\r\nEvery flag matters.\r\nEach solved challenge can reveal new intelligence, unlock characters and locations, alter the mission briefing, and move the story forward in real time. The competition platform becomes a living investigation that evolves with the progress of the Operators.\r\n\r\nExpect  : \r\n- web exploitation, \r\n- digital forensics, \r\n- reverse engineering, \r\n- binary exploitation, \r\n- cryptography, \r\n- OSINT, \r\n- AI security, and more—woven into a single coherent mission unlike any previous EyesOpenCTF.\r\n\r\nBuilt for teams from around the world and open to different experience levels, EyesOpenCTF is both a proving ground and an immersive narrative experience where competitors can learn, compete, get noticed, and join a fast-growing international cybersecurity community.\r\n\r\nAs part of EOCON, the competition also connects participants with experts, researchers, recruiters, entrepreneurs, and emerging talent from Africa and beyond. It is a place where technical ability meets storytelling, where discoveries change the mission, and where tomorrow’s collaborations, careers, and opportunities begin.\r\n\r\nForm your team. Enter the Protocol. Recover the Fragments.\r\n\r\nRegister: https://eyesopensecurity.com/ctf-briefing.html\r\n\r\nDirect Form: https://eyesopensecurity.com/?modal=ctf\r\n\r\nSPONSORS :\r\n- CyberDefenders (https://cyberdefenders.org)\r\n- JetBrains (https://jetbrains.com)\r\n- Netticket (https://netticket.net)\r\n- ExamBoot (https://examboot.net)",
-      "participants": 33,
+      "participants": 37,
       "isCtftime": true
     },
     {
@@ -144,7 +160,23 @@
       "weight": 73.17,
       "location": "",
       "description": "We're excited to announce GlacierCTF 2026 for its fifth edition, a 24-hour jeopardy CTF organized by LosFuzzys.\r\n\r\nJoin our discord at:\r\nhttps://discord.gg/DFYnRAME23\r\n\r\n- Hex-Rays (hex-rays.com)\r\n- ISEC @ Graz University of Technology (isec.tugraz.at)\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
-      "participants": 104,
+      "participants": 106,
+      "isCtftime": true
+    },
+    {
+      "id": "ctftime-3049",
+      "ctftimeId": 3049,
+      "title": "WolvCTF 2026",
+      "start": "2026-11-20T23:00:00+00:00",
+      "finish": "2026-11-22T23:00:00+00:00",
+      "url": "https://wolvctf.io/",
+      "ctftimeUrl": "https://ctftime.org/event/3049/",
+      "logo": "https://ctftime.org//media/events/wolverine-logo-square1_1.jpg",
+      "format": "Jeopardy",
+      "weight": 0,
+      "location": "",
+      "description": "This event will be postponed to Fri, 20 Nov. 2026, 18:00 EST — Sun, 22 Nov. 2026, 18:00 EST\r\n\r\nOur challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint, misc.). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/",
+      "participants": 181,
       "isCtftime": true
     },
     {
@@ -288,7 +320,7 @@
       "weight": 0,
       "location": "",
       "description": "x3CTF is a cute little jeopardy-style CTF with web, pwn, rev, crypto, and misc challs!\r\n\r\nx3CTF 2026 will run from Dec 4th 18:00 UTC until Dec 6th 18:00 UTC (48h). Be on the website a few minutes early for a fun surprise ^_^.",
-      "participants": 19,
+      "participants": 20,
       "isCtftime": true
     },
     {
@@ -337,6 +369,22 @@
       "location": "",
       "description": "Hey! You there! Do you like programming? Do you like puzzles? Do you like... money?\r\n\r\nLeo's 20th Birthday Bash is a 24-hour online team contest that's competitive-programming-ish, CTF-ish, math-olympiad-ish, and puzzle-hunt-ish, all wrapped into one.\r\n\r\nThe contest runs on DMOJ, an online judge for competitive programming, and each team shares one DMOJ account to submit from. Teams can have 1 to 10 members (6 to 8 recommended).\r\n\r\nSome problems are CTF-ish, but DMOJ itself is not part of the contest, so please do not attack, probe, or abuse it. The people at DMOJ are hosting this for free >.<\r\n\r\nThis contest has no sponsors, so all the prize money is from yours truly ;)\r\n\r\nMake sure you've read all the rules (see the contest page). In particular, interactive generative AI is not allowed, because it is stinky.\r\n\r\nSee you there!",
       "participants": 3,
+      "isCtftime": true
+    },
+    {
+      "id": "ctftime-3505",
+      "ctftimeId": 3505,
+      "title": "OTERIA Cyber Cup #4",
+      "start": "2026-12-12T09:00:00+00:00",
+      "finish": "2026-12-12T17:00:00+00:00",
+      "url": "https://www.oteria-cyber-cup.fr/",
+      "ctftimeUrl": "https://ctftime.org/event/3505/",
+      "logo": null,
+      "format": "Jeopardy",
+      "weight": 0,
+      "location": "France, Gennevilliers",
+      "description": "# OTERIA Cyber ​​Cup #4\r\n\r\nRejoignez-nous le 12 décembre 2026 pour la quatrième édition de l'OTERIA Cyber ​​Cup, une compétition de type « Capture The Flag » (CTF) destinée aux étudiants, organisée par l'OTERIA Cyber ​​School à Gennevilliers, en France.\r\n\r\nDétails de l'événement\r\n- Date : 12 décembre 2026\r\n- Lieu : OTERIA Cyber ​​School, 1 Rue du 19 Mars 1962, 92230 Gennevilliers, France\r\n- Format : CTF de type « Jeopardy » (à confirmer)\r\n- Durée : 6 heures\r\n- Participation : Gratuite\r\n- Éligibilité : Étudiants, du lycée jusqu'au niveau Master (Bac à Bac+5)\r\n- Taille des équipes : 4 étudiants par équipe\r\n- Défis : 5 catégories d'épreuves et 25 « flags » (drapeaux) à trouver\r\n\r\nLa compétition est ouverte aussi bien aux débutants qu'aux joueurs expérimentés ; les défis sont conçus pour s'adapter à différents niveaux de compétence.\r\n\r\nRécompenses\r\n- 1re place : 500 € et des goodies\r\n- 2e place : 300 € et des goodies\r\n- 3e place : 150 € et des goodies\r\n\r\nLes membres des 10 meilleures équipes pourront également bénéficier d'un accès direct à un entretien d'admission chez OTERIA, sans avoir à passer le test technique (sous réserve des règles officielles de la compétition).\r\n\r\nInscription : https://www.oteria-cyber-cup.fr/inscription\r\n\r\nSite officiel : https://www.oteria-cyber-cup.fr/\r\n\r\nOrganisé par l'OTERIA Cyber ​​School.",
+      "participants": 0,
       "isCtftime": true
     },
     {
@@ -401,6 +449,22 @@
       "location": "",
       "description": "GaianSpace CTF, hosted by GaianSpace!\r\nChallenges to secure ground and space systems through Web, Pwn, Forensics, Reverse, Network, Crypto and more.\r\nVaried difficulties ensure fun for all skill levels. Hack the cosmos with us!\r\n\r\nLocation: Online\r\nEvent format: Jeopardy\r\n\r\nEvent start datetime: 2027.01.02 6:00pm (UTC)\r\nEvent finish datetime: 2027.01.03 6:00pm (UTC)\r\nDuration: 24 hours\r\n\r\nPrizes: 1st Place, 2nd Place, 3rd Place, Write-up Prizes",
       "participants": 1,
+      "isCtftime": true
+    },
+    {
+      "id": "ctftime-3508",
+      "ctftimeId": 3508,
+      "title": "UofTCTF 2027",
+      "start": "2027-01-09T00:00:00+00:00",
+      "finish": "2027-01-11T00:00:00+00:00",
+      "url": "https://ctf.uoftctf.org/",
+      "ctftimeUrl": "https://ctftime.org/event/3508/",
+      "logo": "https://ctftime.org//media/events/7b576d2f44aeac3b063383d70b37d407.jpg",
+      "format": "Jeopardy",
+      "weight": 50,
+      "location": "",
+      "description": "UofTCTF 2027 is the annual capture-the-flag competition organized by the UofTCTF team. This year’s event will take place online from January 8, 2027, at 7:00 PM EST to January 10, 2027, at 7:00 PM EST. It will be a jeopardy-style CTF with classic categories like web, pwn, crypto, rev, forensics, and misc.\r\n\r\nJoin the event discord server: https://discord.gg/4mQP8Tk3JE",
+      "participants": 0,
       "isCtftime": true
     },
     {
