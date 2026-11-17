@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T21:30:44.526Z",
+  "generatedAt": "2026-11-17T06:04:20.436Z",
   "source": "ctftime.org",
   "count": 33,
   "events": [
@@ -128,7 +128,7 @@
       "weight": 0,
       "location": "",
       "description": "EyesOpenCTF 2026 is a FREE CTF competition organized as part of the 7th edition of EOCON.\r\n\r\nThis year, the competition goes far beyond a traditional CTF.\r\nYou are not simply joining to solve isolated challenges. You are entering The Convergence, a live 48-hour cyber adventure in which reality itself is beginning to fracture.\r\nAcross more than 40 challenges and 8 disciplines, teams will investigate corrupted systems, recover hidden Reality Fragments, unlock classified dossiers, expose compromised actors, and gradually reconstruct the truth behind a phenomenon threatening the entire world.\r\n\r\nEvery flag matters.\r\nEach solved challenge can reveal new intelligence, unlock characters and locations, alter the mission briefing, and move the story forward in real time. The competition platform becomes a living investigation that evolves with the progress of the Operators.\r\n\r\nExpect  : \r\n- web exploitation, \r\n- digital forensics, \r\n- reverse engineering, \r\n- binary exploitation, \r\n- cryptography, \r\n- OSINT, \r\n- AI security, and more—woven into a single coherent mission unlike any previous EyesOpenCTF.\r\n\r\nBuilt for teams from around the world and open to different experience levels, EyesOpenCTF is both a proving ground and an immersive narrative experience where competitors can learn, compete, get noticed, and join a fast-growing international cybersecurity community.\r\n\r\nAs part of EOCON, the competition also connects participants with experts, researchers, recruiters, entrepreneurs, and emerging talent from Africa and beyond. It is a place where technical ability meets storytelling, where discoveries change the mission, and where tomorrow’s collaborations, careers, and opportunities begin.\r\n\r\nForm your team. Enter the Protocol. Recover the Fragments.\r\n\r\nRegister: https://eyesopensecurity.com/ctf-briefing.html\r\n\r\nDirect Form: https://eyesopensecurity.com/?modal=ctf\r\n\r\nSPONSORS :\r\n- CyberDefenders (https://cyberdefenders.org)\r\n- JetBrains (https://jetbrains.com)\r\n- Netticket (https://netticket.net)\r\n- ExamBoot (https://examboot.net)",
-      "participants": 61,
+      "participants": 66,
       "isCtftime": true
     },
     {
@@ -144,7 +144,7 @@
       "weight": 73.17,
       "location": "",
       "description": "We're excited to announce GlacierCTF 2026 for its fifth edition, a 24-hour jeopardy CTF organized by LosFuzzys.\r\n\r\nJoin our discord at:\r\nhttps://discord.gg/DFYnRAME23\r\n\r\n- Hex-Rays (hex-rays.com)\r\n- ISEC @ Graz University of Technology (isec.tugraz.at)\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
-      "participants": 142,
+      "participants": 155,
       "isCtftime": true
     },
     {
@@ -159,8 +159,8 @@
       "format": "Jeopardy",
       "weight": 0,
       "location": "",
-      "description": "Our challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint, misc.). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/",
-      "participants": 203,
+      "description": "Our challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/",
+      "participants": 204,
       "isCtftime": true
     },
     {
@@ -176,7 +176,7 @@
       "weight": 0,
       "location": "",
       "description": "Outback Overflow is a free online jeopardy-style CTF built for high schoolers across Australia. Run by the High School Cybersecurity Community, it's designed to be a stepping stone for students getting into cyber security, whether you've never touched a terminal or you're already popping shells.\r\n\r\nOur goal is simple: grow the number of young people in cyber security and give Australian high schoolers a CTF they can call their own.\r\n\r\nGold Sponsors: \r\n* Tanto Security (https://tantosec.com)\r\n* Try Hack Me (https://tryhackme.com)\r\n\r\nSilver Sponsors\r\n* gen.xyz (https://gen.xyz)\r\n* UTS CSEC (https://utscyber.org)\r\n* Skillbit (https://skillbit.com)\r\n* Active IT prep (https://activeitprep.com)\r\n\r\nHosting Partners:\r\n* Binary Lane (https://www.binarylane.com.au)\r\n\r\nUniversity Supports:\r\n* UNSW Security Society (https://unswsecurity.com)\r\n\r\n(if you would like to sponsor please reach out to outreach@hscyber.org or join our discord!)\r\n\r\nJoin our discord to talk to other players!\r\nhttps://discord.gg/xWPndqMCfA\r\n\r\nEvent Site:\r\nhttps://oo26.hscyber.org/",
-      "participants": 27,
+      "participants": 28,
       "isCtftime": true
     },
     {
@@ -192,7 +192,7 @@
       "weight": 0,
       "location": "Mathura, Uttar Pradesh, India",
       "description": "Seize Da Flaq is the flagship national-level Capture The Flag (CTF) competition organized by Cyberonites Club, GLA University. The event is designed to challenge and showcase cybersecurity talent through real-world, hands-on security challenges across domains such as Web Security, Cryptography, Reverse Engineering, Binary Exploitation, Digital Forensics, OSINT, and Miscellaneous.",
-      "participants": 24,
+      "participants": 25,
       "isCtftime": true
     },
     {
@@ -208,7 +208,7 @@
       "weight": 37,
       "location": "",
       "description": "Crate-CTF is an annual Capture The Flag (CTF) competition organised by the Swedish Defence Research Agency in collaboration with the Swedish Armed Forces, designed to introduce high school and university students to the field of cybersecurity. This year we return for our seventh CTF, with challenges for all skill levels from beginners to seasoned CTF players. The challenges are categorised into web exploitation, reverse engineering, binary exploitation, cryptography, forensics, OSINT, networking and the all-encompassing \"other\".\r\n\r\nWhile the event will be conducted in Swedish, international participants are also welcome to join (using translation tools as needed). Communication with challenge authors and administrators can be conducted in English.",
-      "participants": 54,
+      "participants": 60,
       "isCtftime": true
     },
     {
@@ -224,7 +224,7 @@
       "weight": 0,
       "location": "Onsite at 6 locations in Canada",
       "description": "CyberSci is Canada's national Cyber Security Challenge for university and college students.\r\n- Think you've got an elite team of students? Come and prove it. Our winners will go on to compete against the best in the world.\r\n- Just starting out? This is the best way to learn and rise to the top.\r\n- Annual in-person events since 2016. (Online during Covid.) Over 500 students so far.\r\n\r\nFormat:\r\n- Modified jeopardy style. Realistic IT environment.\r\n- Regional qualifiers are held in Nov-Dec each year.\r\n- National finals are the following July.\r\n- Winning teams represent Canada at international events in the Fall.\r\n\r\nFor Regionals (qualifiers):\r\nWe do hacking in the morning, interviews in the afternoon, and job offers by supper (for intern/summer/coop jobs).\r\n- Full-time job offers take a few more days.\r\n- Students register their team through their school instructor or computer club. Max 2 teams per school.\r\n\r\nFor nationals:\r\nParticipants will be the winning team from each regional/qualifier\r\n- PLUS one all-juniors (19 and under)\r\n- AND one all-women team (chosen from participants at the Regionals).\r\nTwo-day event. ",
-      "participants": 7,
+      "participants": 8,
       "isCtftime": true
     },
     {
@@ -256,7 +256,7 @@
       "weight": 45.76,
       "location": "",
       "description": "Qualifications for fifth edition of LakeCTF\r\n\r\nold discord server here for discussion: https://discord.gg/8FHmzT5aGM \r\n\r\nnew discord server in your invite email",
-      "participants": 51,
+      "participants": 55,
       "isCtftime": true
     },
     {
@@ -368,7 +368,7 @@
       "weight": 79.51,
       "location": "",
       "description": "Team bi0s invites you to our prestigious bi0sCTF 2026, a premier hacking event designed for hackers of all generations. We are dedicated to crafting challenges that incorporate the latest vulnerabilities, responsibly pushing the boundaries of innovation to ensure a delightful and enriching experience for all participants.\r\n\r\nStay tuned for official updates by following us on https://twitter.com/teambi0s.",
-      "participants": 37,
+      "participants": 38,
       "isCtftime": true
     },
     {
@@ -384,7 +384,7 @@
       "weight": 59,
       "location": "",
       "description": "niteCTF, hosted by Cryptonite, is designed to help students explore new & diverse areas of cybersecurity while providing a platform for experienced players to sharpen their skills. The CTF features a wide range of challenges spanning multiple domains including Hardware Security, Cryptography, Web Exploitation, Digital Forensics, Binary Exploitation, Reverse Engineering, and more!\r\n\r\n~ hosted by <a href=\"https://cryptonitemit.in\" target=\"_blank\">Cryptonite</a>\r\n\r\nIndustry Sponsor: <a href=\"https://hex-rays.com/\">Hex-Rays</a>\r\n\r\nInfra sponsored by <a href=\"https://goo.gle/ctfsponsorship\" target=\"_blank\">goo.gle/ctfsponsorship</a>",
-      "participants": 72,
+      "participants": 73,
       "isCtftime": true
     },
     {
@@ -432,7 +432,7 @@
       "weight": 22.9,
       "location": "",
       "description": "BSides Algiers 2026 CTF, a jeopardy-style CTF featuring intermediate to extreme challenges on reverse-engineering, binary exploitation, cryptography, web security and more.\r\n\r\nOrganized by Shellmates Club.\r\n\r\nInfra sponsored by https://goo.gle/ctfsponsorship\r\n\r\nNote: The CTF will be both onsite and online, but only Algerian teams can play onsite.",
-      "participants": 10,
+      "participants": 11,
       "isCtftime": true
     },
     {
@@ -448,7 +448,7 @@
       "weight": 77.38,
       "location": "",
       "description": "BackdoorCTF is the flagship event of InfoSecIITR.\r\n\r\nCategories will include Pwn, Rev, Web, Crypto, Forensics, Misc\r\n\r\nDiscord invite for the competition is https://discord.gg/chHtsSTQ2\r\n\r\nSupported by our Sponsors:\r\n\r\nInfrastructure Sponsored by: \r\n- Google Cloud (https://goo.gle/ctfsponsorship)\r\n\r\nOther Sponsors for BackdoorCTF 2026 will be announced soon.\r\n\r\nHappy Hacking!",
-      "participants": 36,
+      "participants": 38,
       "isCtftime": true
     },
     {
@@ -480,7 +480,7 @@
       "weight": 0,
       "location": "",
       "description": "THE FINAL EXPLOIT CTF 2026 — QUALIFIERS\r\n\r\nONE LAST FLAG. ONE FINAL EXPLOIT.\r\n\r\nThe year is coming to an end, but there's one last challenge waiting.\r\n\r\nOrganized by 0xV01D, THE FINAL EXPLOIT CTF 2026 is a 48-hour international online Jeopardy-style competition, open to CTF teams worldwide.\r\n\r\nCompete against teams from around the world, solve challenging cybersecurity problems, demonstrate your real-world skills, and earn your place in THE FINAL EXPLOIT CTF 2026 — GRAND FINAL.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\nEVENT DETAILS\r\n\r\nDates: December 29–31, 2026\r\nStart: December 29 at 12:00 UTC\r\nEnd: December 31 at 12:00 UTC\r\nDuration: 48 hours\r\nFormat: Online | Jeopardy-style\r\nParticipation: Team-based | Worldwide\r\nOrganizer: 0xV01D\r\nPrizes: To be announced\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\nCHALLENGE CATEGORIES\r\n\r\n• Web Exploitation\r\n• Binary Exploitation (Pwn)\r\n• Reverse Engineering\r\n• Cryptography\r\n• OSINT\r\n• Digital Forensics & Incident Response (DFIR)\r\n• Malware Analysis\r\n• Mobile Security\r\n• AI Security\r\n• Blockchain Security\r\n• Miscellaneous\r\n\r\nBEYOND TRADITIONAL CTF CHALLENGES\r\n\r\nThis competition goes beyond conventional CTF puzzles.\r\n\r\nParticipants will face realistic, industry-inspired cybersecurity scenarios designed to test practical skills used by security professionals in real-world environments.\r\n\r\nExpect hands-on challenges involving:\r\n\r\n• Security Operations Center (SOC) investigations and threat detection\r\n• Real-world penetration testing methodologies and exploitation scenarios\r\n• Digital forensics and incident response investigations\r\n• Analysis of authentic or realistically simulated security logs, network traffic, and system artifacts\r\n• Threat hunting, attack reconstruction, and incident analysis\r\n• Practical security challenges inspired by real operational environments\r\n\r\nThese challenges are designed to bridge the gap between CTF competitions and the cybersecurity industry, encouraging participants to develop job-relevant skills in offensive and defensive security.\r\n\r\nNOT JUST FLAGS. REAL SKILLS. REAL-WORLD SECURITY.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\nTHE ROAD TO THE GRAND FINAL\r\n\r\n50 TEAMS. ONE GRAND FINAL. ONE CHAMPION.\r\n\r\nThe top 50 eligible teams will qualify for THE FINAL EXPLOIT CTF 2026 — GRAND FINAL through four main divisions.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\n01 | INTERNATIONAL DIVISION — 20 SLOTS\r\n\r\nThe International Division is divided into two categories:\r\n\r\nA. INTERNATIONAL OPEN — 16 SLOTS\r\n\r\nThe 16 highest-scoring eligible international teams will qualify.\r\n\r\nThis category is open to male, mixed-gender\r\n\r\nB. INTERNATIONAL WOMEN — 4 SLOTS\r\n\r\nThe 4 highest-scoring eligible international all-women teams will qualify.\r\n\r\nTeams must consist entirely of female participants.\r\n\r\nQualification is based on the official competition scoreboard and final scores.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\n02 | JORDANIAN UNIVERSITY DIVISION — 10 SLOTS\r\n\r\nThe 10 highest-scoring eligible teams representing universities in Jordan will qualify.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\n03 | JORDANIAN SCHOOL DIVISION — 10 SLOTS\r\n\r\nThe 10 highest-scoring eligible teams representing schools in Jordan will qualify.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\n04 | JORDANIAN WOMEN'S DIVISION — 10 SLOTS\r\n\r\nThe 10 highest-scoring eligible all-women teams from Jordan will qualify.\r\n\r\nREQUIREMENTS:\r\n\r\n• Every team member must be female.\r\n• Teams must represent Jordan.\r\n• Teams may include students from different schools and universities.\r\n• Mixed educational backgrounds are fully permitted, including teams combining school and university students.\r\n• Qualification is based on the final competition scores.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\nQUALIFICATION RULES\r\n\r\n• The qualifiers are open to teams worldwide.\r\n• A total of 50 teams will advance to the Grand Final.\r\n• All rankings are determined by the official competition scoreboard.\r\n• Each team may claim only one Grand Final qualification slot.\r\n• If a team qualifies in multiple divisions, its qualification slot will be assigned according to the official eligibility rules, and the next highest-scoring eligible team will advance.\r\n• Full eligibility requirements, team verification procedures, and Grand Final rules will be published on the official event website.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\nOFFICIAL INFORMATION\r\n\r\nWebsite: https://0xv01d-ctf.xyz/\r\n\r\nFurther details regarding the Grand Final, team eligibility, competition rules, and prizes will be announced on our official website.\r\n\r\n━━━━━━━━━━━━━━━━━━━━\r\n\r\n50 TEAMS.\r\n4 MAIN DIVISIONS.\r\nONE GRAND FINAL.\r\nONE CHAMPION.\r\n\r\nONE LAST FLAG. ONE FINAL EXPLOIT.\r\n\r\nSee you on the scoreboard.\r\n\r\n— 0xV01D Team",
-      "participants": 8,
+      "participants": 9,
       "isCtftime": true
     },
     {
