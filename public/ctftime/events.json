@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-19T19:51:44.959Z",
+  "generatedAt": "2026-11-20T01:58:55.043Z",
   "source": "ctftime.org",
-  "count": 33,
+  "count": 34,
   "events": [
     {
       "id": "ctftime-3486",
@@ -112,7 +112,7 @@
       "weight": 73.17,
       "location": "",
       "description": "We're excited to announce GlacierCTF 2026 for its fifth edition, a 24-hour jeopardy CTF organized by LosFuzzys.\r\n\r\nJoin our discord at:\r\nhttps://discord.gg/DFYnRAME23\r\n\r\n- Hex-Rays (hex-rays.com)\r\n- ISEC @ Graz University of Technology (isec.tugraz.at)\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
-      "participants": 215,
+      "participants": 217,
       "isCtftime": true
     },
     {
@@ -127,8 +127,8 @@
       "format": "Jeopardy",
       "weight": 0,
       "location": "",
-      "description": "Our challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/",
-      "participants": 232,
+      "description": "Our challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/\r\nAltered Security: https://www.alteredsecurity.com/",
+      "participants": 235,
       "isCtftime": true
     },
     {
@@ -144,7 +144,7 @@
       "weight": 0,
       "location": "",
       "description": "Outback Overflow is a free online jeopardy-style CTF built for high schoolers across Australia. Run by the High School Cybersecurity Community, it's designed to be a stepping stone for students getting into cyber security, whether you've never touched a terminal or you're already popping shells.\r\n\r\nOur goal is simple: grow the number of young people in cyber security and give Australian high schoolers a CTF they can call their own.\r\n\r\nGold Sponsors: \r\n* Tanto Security (https://tantosec.com)\r\n* Try Hack Me (https://tryhackme.com)\r\n\r\nSilver Sponsors\r\n* gen.xyz (https://gen.xyz)\r\n* UTS CSEC (https://utscyber.org)\r\n* Skillbit (https://skillbit.com)\r\n* Active IT prep (https://activeitprep.com)\r\n\r\nHosting Partners:\r\n* Binary Lane (https://www.binarylane.com.au)\r\n\r\nUniversity Supports:\r\n* UNSW Security Society (https://unswsecurity.com)\r\n\r\n(if you would like to sponsor please reach out to outreach@hscyber.org or join our discord!)\r\n\r\nJoin our discord to talk to other players!\r\nhttps://discord.gg/xWPndqMCfA\r\n\r\nEvent Site:\r\nhttps://oo26.hscyber.org/",
-      "participants": 42,
+      "participants": 43,
       "isCtftime": true
     },
     {
@@ -176,7 +176,7 @@
       "weight": 37,
       "location": "",
       "description": "Crate-CTF is an annual Capture The Flag (CTF) competition organised by the Swedish Defence Research Agency in collaboration with the Swedish Armed Forces, designed to introduce high school and university students to the field of cybersecurity. This year we return for our seventh CTF, with challenges for all skill levels from beginners to seasoned CTF players. The challenges are categorised into web exploitation, reverse engineering, binary exploitation, cryptography, forensics, OSINT, networking and the all-encompassing \"other\".\r\n\r\nWhile the event will be conducted in Swedish, international participants are also welcome to join (using translation tools as needed). Communication with challenge authors and administrators can be conducted in English.",
-      "participants": 79,
+      "participants": 80,
       "isCtftime": true
     },
     {
@@ -320,6 +320,22 @@
       "weight": 0,
       "location": "Nanjing, China",
       "description": "The 2026 Qiangwang Challenge on Cyber Mimic Defense Finals is the on-site final round of the 9th Qiangwang International Elite Challenge on Cyber Mimic Defense in Nanjing, China.\r\n\r\nQualified and invited teams conduct security research on physical targets within the competition scope across six tracks. Judges evaluate the teams’ technical reports under the competition rules.",
+      "participants": 0,
+      "isCtftime": true
+    },
+    {
+      "id": "ctftime-3518",
+      "ctftimeId": 3518,
+      "title": "TUCTF 2026",
+      "start": "2026-12-04T10:00:00+00:00",
+      "finish": "2026-12-06T18:00:00+00:00",
+      "url": "https://tuctf.com/",
+      "ctftimeUrl": "https://ctftime.org/event/3518/",
+      "logo": "https://ctftime.org//media/events/tuctf.png",
+      "format": "Jeopardy",
+      "weight": 0,
+      "location": "",
+      "description": "TUCTF26 is a Capture the Flag competition hosted by the CTF club at the University of Tulsa designed for a range of skill levels for teams that want to build their experience. We offer Web, Forensics, Crypto, Reverse Engineering, and Miscellanous based challenges. If you have any questions you can contact us through our Discord: https://discord.gg/Q35eWhHsw",
       "participants": 0,
       "isCtftime": true
     },
