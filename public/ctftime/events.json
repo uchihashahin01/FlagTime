@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T19:30:36.886Z",
+  "generatedAt": "2026-11-21T01:55:19.410Z",
   "source": "ctftime.org",
   "count": 32,
   "events": [
@@ -80,7 +80,7 @@
       "weight": 0,
       "location": "",
       "description": "Our challenges range from beginner to hard in difficulty. Our esteemed members have worked tirelessly to bring new and stimulating CTF challenges to pose varying levels of difficulty and topic (RE, binary exploit, web exploit, cryptography, forensics, osint). \r\n\r\nThere are two divisions, Open and University of Michigan students. No team limit sizes.\r\n\r\nThank you to our sponsors!\r\nBinary Ninja: https://binary.ninja/\r\nAltered Security: https://www.alteredsecurity.com/",
-      "participants": 249,
+      "participants": 250,
       "isCtftime": true
     },
     {
@@ -96,7 +96,7 @@
       "weight": 0,
       "location": "",
       "description": "Outback Overflow is a free online jeopardy-style CTF built for high schoolers across Australia. Run by the High School Cybersecurity Community, it's designed to be a stepping stone for students getting into cyber security, whether you've never touched a terminal or you're already popping shells.\r\n\r\nOur goal is simple: grow the number of young people in cyber security and give Australian high schoolers a CTF they can call their own.\r\n\r\nGold Sponsors: \r\n* Tanto Security (https://tantosec.com)\r\n* Try Hack Me (https://tryhackme.com)\r\n\r\nSilver Sponsors\r\n* gen.xyz (https://gen.xyz)\r\n* UTS CSEC (https://utscyber.org)\r\n* Skillbit (https://skillbit.com)\r\n* Active IT prep (https://activeitprep.com)\r\n\r\nHosting Partners:\r\n* Binary Lane (https://www.binarylane.com.au)\r\n\r\nUniversity Supports:\r\n* UNSW Security Society (https://unswsecurity.com)\r\n\r\n(if you would like to sponsor please reach out to outreach@hscyber.org or join our discord!)\r\n\r\nJoin our discord to talk to other players!\r\nhttps://discord.gg/xWPndqMCfA\r\n\r\nEvent Site:\r\nhttps://oo26.hscyber.org/",
-      "participants": 48,
+      "participants": 50,
       "isCtftime": true
     },
     {
@@ -112,7 +112,7 @@
       "weight": 0,
       "location": "Mathura, Uttar Pradesh, India",
       "description": "Seize Da Flaq is the flagship national-level Capture The Flag (CTF) competition organized by Cyberonites Club, GLA University. The event is designed to challenge and showcase cybersecurity talent through real-world, hands-on security challenges across domains such as Web Security, Cryptography, Reverse Engineering, Binary Exploitation, Digital Forensics, OSINT, and Miscellaneous.",
-      "participants": 31,
+      "participants": 33,
       "isCtftime": true
     },
     {
@@ -128,7 +128,7 @@
       "weight": 37,
       "location": "",
       "description": "Crate-CTF is an annual Capture The Flag (CTF) competition organised by the Swedish Defence Research Agency in collaboration with the Swedish Armed Forces, designed to introduce high school and university students to the field of cybersecurity. This year we return for our seventh CTF, with challenges for all skill levels from beginners to seasoned CTF players. The challenges are categorised into web exploitation, reverse engineering, binary exploitation, cryptography, forensics, OSINT, networking and the all-encompassing \"other\".\r\n\r\nWhile the event will be conducted in Swedish, international participants are also welcome to join (using translation tools as needed). Communication with challenge authors and administrators can be conducted in English.",
-      "participants": 93,
+      "participants": 99,
       "isCtftime": true
     },
     {
@@ -160,7 +160,7 @@
       "weight": 0,
       "location": "",
       "description": "RedReaper CTF\r\n\r\nWelcome to RedReaper CTF, a cybersecurity Capture The Flag competition organized by RedX & Reaper \r\n\r\nEnter a dark world of cybersecurity challenges, where technical knowledge, creativity, and problem-solving skills will determine who survives the hunt.\r\n\r\nTest your skills across multiple cybersecurity domains, solve challenges, uncover hidden flags, and compete against other participants.\r\n\r\nChallenge Categories\r\n- Forensics\r\n- Crypto\r\n- Misc\r\n- Reverse Engineering\r\n- Web\r\n- AI Hacking\r\n- Pwn\r\n- OSINT\r\n- Automation\r\n\r\nEvent Information\r\n- Organizer: RedX & Reaper \r\n- Official Website: https://qualification.redx.site/\r\n- social Media: https://qualification.redx.site/socials\r\n- RedX Platform: https://redx.site\r\n\r\n\r\nSharpen your skills, trust your knowledge, and prepare for the hunt.\r\n\r\nThe Reaper is waiting.",
-      "participants": 12,
+      "participants": 15,
       "isCtftime": true
     },
     {
@@ -176,7 +176,7 @@
       "weight": 0,
       "location": "",
       "description": "N0v4CTF 2026 is a free, 24-hour online Jeopardy-style Capture the Flag competition open to teams worldwide.\r\n\r\nChallenges cover Web Exploitation, Pwn (Binary Exploitation), Reverse Engineering, Cryptography, Digital Forensics, and Miscellaneous. Teams can investigate digital evidence, recover hidden messages, and figure out how unfamiliar programs work. The challenge set includes beginner-friendly puzzles and tougher problems for experienced players.\r\n\r\nTeams earn points by submitting correct flags. A live scoreboard tracks team rankings throughout the competition.\r\n\r\nThe event runs from 17:00 UTC on November 27 to 17:00 UTC on November 28, 2026. In Vietnam, that is midnight at the start of November 27 to midnight at the start of November 28 (UTC+7).",
-      "participants": 4,
+      "participants": 6,
       "isCtftime": true
     },
     {
@@ -192,7 +192,7 @@
       "weight": 45.76,
       "location": "",
       "description": "Qualifications for fifth edition of LakeCTF\r\n\r\nold discord server here for discussion: https://discord.gg/8FHmzT5aGM \r\n\r\nnew discord server in your invite email",
-      "participants": 60,
+      "participants": 61,
       "isCtftime": true
     },
     {
@@ -288,7 +288,7 @@
       "weight": 0,
       "location": "",
       "description": "TUCTF26 is a Capture the Flag competition hosted by the CTF club at the University of Tulsa designed for a range of skill levels for teams that want to build their experience. We offer Web, Forensics, Crypto, Reverse Engineering, and Miscellanous based challenges. If you have any questions you can contact us through our Discord: https://discord.gg/Q35eWhHsw",
-      "participants": 0,
+      "participants": 1,
       "isCtftime": true
     },
     {
