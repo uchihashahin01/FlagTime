@@ -1,40 +1,8 @@
 {
-  "generatedAt": "2026-11-21T10:33:09.524Z",
+  "generatedAt": "2026-11-21T18:34:39.250Z",
   "source": "ctftime.org",
-  "count": 32,
+  "count": 30,
   "events": [
-    {
-      "id": "ctftime-3464",
-      "ctftimeId": 3464,
-      "title": "h4ckc0n 2026",
-      "start": "2026-11-14T15:30:00+00:00",
-      "finish": "2026-11-15T15:30:00+00:00",
-      "url": "http://h4ckc0n.centralindia.cloudapp.azure.com/",
-      "ctftimeUrl": "https://ctftime.org/event/3464/",
-      "logo": "https://ctftime.org//media/events/images_1.jpeg",
-      "format": "Jeopardy",
-      "weight": 24.23,
-      "location": "",
-      "description": "h4ckc0n is a 24-hour international Jeopardy-style Capture The Flag competition.\r\n\r\nEVENT URL UP! REGISTER NOW!\r\n\r\nCategories: Reverse Engineering, Web-exploitation, Forensics, AI/ML, Web3, OSINT, PWN, Cryptography, Miscellaneous\r\n\r\nThe competition is designed to accommodate teams of varying skill levels, with a diverse challenge set covering multiple areas of cybersecurity.\r\n\r\nDuration: 24 hours\r\nFormat: Jeopardy-style CTF\r\nMode: Online\r\nTeam-based: Yes\r\n\r\nJoin the discord server: https://discord.gg/kw8J5r2ZWh\r\n\r\n",
-      "participants": 130,
-      "isCtftime": true
-    },
-    {
-      "id": "ctftime-3467",
-      "ctftimeId": 3467,
-      "title": "InIt CTF",
-      "start": "2026-11-14T15:30:00+00:00",
-      "finish": "2026-11-14T23:30:00+00:00",
-      "url": "https://hackersinindia.com/init-ctf",
-      "ctftimeUrl": "https://ctftime.org/event/3467/",
-      "logo": "https://ctftime.org//media/events/InIt_CTF.png",
-      "format": "Jeopardy",
-      "weight": 0,
-      "location": "",
-      "description": "InIt CTF is HII's (Hackers in India) beginner-focused Capture The Flag event, free and open to participants across India and internationally. 8 hours, Jeopardy-style, solo or teams of up to 4, across Web, Crypto, Forensics, OSINT, and Misc — mostly easy/medium with a couple of harder challenges for experienced players. This edition is sponsored by .xyz, who are providing free domain codes for participants, with additional sponsors being confirmed. Register at\r\n\r\nhackersinindia.com/init-ctf.",
-      "participants": 49,
-      "isCtftime": true
-    },
     {
       "id": "ctftime-3419",
       "ctftimeId": 3419,
@@ -128,7 +96,7 @@
       "weight": 37,
       "location": "",
       "description": "Crate-CTF is an annual Capture The Flag (CTF) competition organised by the Swedish Defence Research Agency in collaboration with the Swedish Armed Forces, designed to introduce high school and university students to the field of cybersecurity. This year we return for our seventh CTF, with challenges for all skill levels from beginners to seasoned CTF players. The challenges are categorised into web exploitation, reverse engineering, binary exploitation, cryptography, forensics, OSINT, networking and the all-encompassing \"other\".\r\n\r\nWhile the event will be conducted in Swedish, international participants are also welcome to join (using translation tools as needed). Communication with challenge authors and administrators can be conducted in English.",
-      "participants": 109,
+      "participants": 114,
       "isCtftime": true
     },
     {
@@ -144,7 +112,7 @@
       "weight": 0,
       "location": "Onsite at 6 locations in Canada",
       "description": "CyberSci is Canada's national Cyber Security Challenge for university and college students.\r\n- Think you've got an elite team of students? Come and prove it. Our winners will go on to compete against the best in the world.\r\n- Just starting out? This is the best way to learn and rise to the top.\r\n- Annual in-person events since 2016. (Online during Covid.) Over 500 students so far.\r\n\r\nFormat:\r\n- Modified jeopardy style. Realistic IT environment.\r\n- Regional qualifiers are held in Nov-Dec each year.\r\n- National finals are the following July.\r\n- Winning teams represent Canada at international events in the Fall.\r\n\r\nFor Regionals (qualifiers):\r\nWe do hacking in the morning, interviews in the afternoon, and job offers by supper (for intern/summer/coop jobs).\r\n- Full-time job offers take a few more days.\r\n- Students register their team through their school instructor or computer club. Max 2 teams per school.\r\n\r\nFor nationals:\r\nParticipants will be the winning team from each regional/qualifier\r\n- PLUS one all-juniors (19 and under)\r\n- AND one all-women team (chosen from participants at the Regionals).\r\nTwo-day event. ",
-      "participants": 10,
+      "participants": 11,
       "isCtftime": true
     },
     {
@@ -160,7 +128,7 @@
       "weight": 0,
       "location": "",
       "description": "RedReaper CTF\r\n\r\nWelcome to RedReaper CTF, a cybersecurity Capture The Flag competition organized by RedX & Reaper \r\n\r\nEnter a dark world of cybersecurity challenges, where technical knowledge, creativity, and problem-solving skills will determine who survives the hunt.\r\n\r\nTest your skills across multiple cybersecurity domains, solve challenges, uncover hidden flags, and compete against other participants.\r\n\r\nChallenge Categories\r\n- Forensics\r\n- Crypto\r\n- Misc\r\n- Reverse Engineering\r\n- Web\r\n- AI Hacking\r\n- Pwn\r\n- OSINT\r\n- Automation\r\n\r\nEvent Information\r\n- Organizer: RedX & Reaper \r\n- Official Website: https://qualification.redx.site/\r\n- social Media: https://qualification.redx.site/socials\r\n- RedX Platform: https://redx.site\r\n\r\n\r\nSharpen your skills, trust your knowledge, and prepare for the hunt.\r\n\r\nThe Reaper is waiting.",
-      "participants": 16,
+      "participants": 21,
       "isCtftime": true
     },
     {
@@ -176,7 +144,7 @@
       "weight": 0,
       "location": "",
       "description": "N0v4CTF 2026 is a free, 24-hour online Jeopardy-style Capture the Flag competition open to teams worldwide.\r\n\r\nChallenges cover Web Exploitation, Pwn (Binary Exploitation), Reverse Engineering, Cryptography, Digital Forensics, and Miscellaneous. Teams can investigate digital evidence, recover hidden messages, and figure out how unfamiliar programs work. The challenge set includes beginner-friendly puzzles and tougher problems for experienced players.\r\n\r\nTeams earn points by submitting correct flags. A live scoreboard tracks team rankings throughout the competition.\r\n\r\nThe event runs from 17:00 UTC on November 27 to 17:00 UTC on November 28, 2026. In Vietnam, that is midnight at the start of November 27 to midnight at the start of November 28 (UTC+7).",
-      "participants": 8,
+      "participants": 9,
       "isCtftime": true
     },
     {
@@ -192,7 +160,7 @@
       "weight": 45.76,
       "location": "",
       "description": "Qualifications for fifth edition of LakeCTF\r\n\r\nold discord server here for discussion: https://discord.gg/8FHmzT5aGM \r\n\r\nnew discord server in your invite email",
-      "participants": 65,
+      "participants": 68,
       "isCtftime": true
     },
     {
@@ -208,7 +176,7 @@
       "weight": 0,
       "location": "",
       "description": "TIFAC-CORE, Amrita Vishwa Vidyapeetham, Coimbatore, invites you to \"L3m0n CTF 2026\", our annual flagship Capture The Flag competition!\r\n\r\n- 12-hour Jeopardy-style online qualifiers.\r\n- Open to teams of 1–4 participants.\r\n- Challenges across Web, Pwn, Cryptography, AI/LLM, Forensics, OSINT and more.\r\n- Beginner-friendly category for newcomers.\r\n- Top teams advance to the on-campus finals at Coimbatore to be held on December 12th, 2026.\r\n\r\nQualifiers Date: November 28th, 2026  \r\nTime: 4:30 AM – 4:30 PM GMT\r\n\r\nRegister and stay tuned for updates: https://l3m0nctf.xyz",
-      "participants": 52,
+      "participants": 54,
       "isCtftime": true
     },
     {
@@ -240,7 +208,7 @@
       "weight": 0,
       "location": "",
       "description": "Black Hat India 2026 Official CTF is a 24-hour online Jeopardy-style CTF with 200 original challenges. The top 3 teams each win 3 Briefings passes (9 in total, each worth ₹85,000) to attend Black Hat India 2027 in Hyderabad. Dates for Black Hat India 2027 are yet to be announced.\r\n\r\nCategories: Web3, Smart Contract Exploitation, LLM Security, AI Security, IAM, SSO, DFIR, Cloud Native Security, Mobile Security, FinTech Security, Linux Security, Active Directory, DevSecOps, Binary Exploitation, Reverse Engineering, Web Security, Cryptography, OSINT, Steganography, Miscellaneous, and a Beginner Jeopardy Track.\r\n\r\nTeam size: up to 3. Scheduled start: 28 Nov, 7:30 PM IST.\r\n\r\nPlatform sponsor and CTF host: CTF7 (https://ctf7.com) - the platform running this CTF.\r\n\r\nWebsite: https://ctf.blackhat-india.com/",
-      "participants": 17,
+      "participants": 18,
       "isCtftime": true
     },
     {
@@ -320,7 +288,7 @@
       "weight": 79.51,
       "location": "",
       "description": "Team bi0s invites you to our prestigious bi0sCTF 2026, a premier hacking event designed for hackers of all generations. We are dedicated to crafting challenges that incorporate the latest vulnerabilities, responsibly pushing the boundaries of innovation to ensure a delightful and enriching experience for all participants.\r\n\r\nStay tuned for official updates by following us on https://twitter.com/teambi0s.",
-      "participants": 40,
+      "participants": 42,
       "isCtftime": true
     },
     {
@@ -336,7 +304,7 @@
       "weight": 59,
       "location": "",
       "description": "niteCTF, hosted by Cryptonite, is designed to help students explore new & diverse areas of cybersecurity while providing a platform for experienced players to sharpen their skills. The CTF features a wide range of challenges spanning multiple domains including Hardware Security, Cryptography, Web Exploitation, Digital Forensics, Binary Exploitation, Reverse Engineering, and more!\r\n\r\n~ hosted by <a href=\"https://cryptonitemit.in\" target=\"_blank\">Cryptonite</a>\r\n\r\nIndustry Sponsor: <a href=\"https://hex-rays.com/\">Hex-Rays</a>\r\n\r\nInfra sponsored by <a href=\"https://goo.gle/ctfsponsorship\" target=\"_blank\">goo.gle/ctfsponsorship</a>",
-      "participants": 76,
+      "participants": 77,
       "isCtftime": true
     },
     {
@@ -384,7 +352,7 @@
       "weight": 22.9,
       "location": "",
       "description": "BSides Algiers 2026 CTF, a jeopardy-style CTF featuring intermediate to extreme challenges on reverse-engineering, binary exploitation, cryptography, web security and more.\r\n\r\nOrganized by Shellmates Club.\r\n\r\nInfra sponsored by https://goo.gle/ctfsponsorship\r\n\r\nNote: The CTF will be both onsite and online, but only Algerian teams can play onsite.",
-      "participants": 13,
+      "participants": 14,
       "isCtftime": true
     },
     {
