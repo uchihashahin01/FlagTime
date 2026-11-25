@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T19:51:45.038Z",
+  "generatedAt": "2026-11-25T03:54:55.098Z",
   "source": "ctftime.org",
   "count": 33,
   "events": [
@@ -144,7 +144,7 @@
       "weight": 0,
       "location": "",
       "description": "N0v4CTF 2026 is a free, 24-hour online Jeopardy-style Capture the Flag competition organized by NovaRun, open to teams and cybersecurity enthusiasts worldwide.\r\n\r\nChallenges cover Web Exploitation, Pwn (Binary Exploitation), Reverse Engineering, Cryptography, Digital Forensics, and Miscellaneous. Teams will investigate digital evidence, recover hidden messages, exploit vulnerabilities, and analyze unfamiliar programs. The challenge set includes both beginner-friendly puzzles and tougher problems for experienced players.\r\n\r\nTeams earn points by submitting correct flags, with a live scoreboard tracking rankings throughout the competition.\r\n\r\n[ SCHEDULE ]\r\n- Start: November 27, 2026, 17:00 UTC (November 28, 2026, 00:00 UTC+7 / ICT)\r\n- End: November 28, 2026, 17:00 UTC (November 29, 2026, 00:00 UTC+7 / ICT)\r\n\r\n[ OFFICIAL PRIZE SPONSOR: TRYHACKME ]\r\nN0v4CTF 2026 is proudly sponsored by TryHackMe (https://tryhackme.com) — a leading gamified cybersecurity training platform helping learners and professionals master real-world offensive and defensive security skills.\r\n\r\n[ PRIZE POOL ]\r\n- 1st Place: 2x 6-Month TryHackMe Premium Vouchers + Official Winner Certificates\r\n- 2nd Place: 2x 3-Month TryHackMe Premium Vouchers + Official Winner Certificates\r\n- 3rd Place: 2x 1-Month TryHackMe Premium Vouchers + Official Winner Certificates\r\n- Best Write-up Award: 1x 1-Month TryHackMe Premium Voucher\r\n\r\n(Note: Vouchers will be distributed within 5–7 days after the competition ends and Top 3 write-ups are verified.)\r\n\r\n[ LINKS & COMMUNITY ]\r\n- Official Website: https://n0v4ctf.devs.surf/\r\n- Discord Server: https://discord.gg/JAWpzjsNp",
-      "participants": 48,
+      "participants": 50,
       "isCtftime": true
     },
     {
@@ -160,7 +160,7 @@
       "weight": 45.76,
       "location": "",
       "description": "Qualifications for fifth edition of LakeCTF\r\n\r\nold discord server here for discussion: https://discord.gg/8FHmzT5aGM \r\n\r\nnew discord server in your invite email",
-      "participants": 96,
+      "participants": 97,
       "isCtftime": true
     },
     {
@@ -176,7 +176,7 @@
       "weight": 0,
       "location": "",
       "description": "TIFAC-CORE, Amrita Vishwa Vidyapeetham, Coimbatore, invites you to \"L3m0n CTF 2026\", our annual flagship Capture The Flag competition!\r\n\r\n- 12-hour Jeopardy-style online qualifiers.\r\n- Open to teams of 1–4 participants.\r\n- Challenges across Web, Pwn, Cryptography, AI/LLM, Forensics, OSINT and more.\r\n- Beginner-friendly category for newcomers.\r\n- Top teams advance to the on-campus finals at Coimbatore to be held on December 12th, 2026.\r\n\r\nQualifiers Date: November 28th, 2026  \r\nTime: 4:30 AM – 4:30 PM GMT\r\n\r\nRegister and stay tuned for updates: https://l3m0nctf.xyz",
-      "participants": 89,
+      "participants": 90,
       "isCtftime": true
     },
     {
@@ -208,7 +208,7 @@
       "weight": 0,
       "location": "",
       "description": "Black Hat India 2026 Official CTF is a 24-hour online Jeopardy-style CTF with 200 original challenges. The top 3 teams each win 3 Briefings passes (9 in total, each worth ₹85,000) to attend Black Hat India 2027 in Hyderabad. Dates for Black Hat India 2027 are yet to be announced.\r\n\r\nCategories: Web3, Smart Contract Exploitation, LLM Security, AI Security, IAM, SSO, DFIR, Cloud Native Security, Mobile Security, FinTech Security, Linux Security, Active Directory, DevSecOps, Binary Exploitation, Reverse Engineering, Web Security, Cryptography, OSINT, Steganography, Miscellaneous, and a Beginner Jeopardy Track.\r\n\r\nTeam size: up to 3. Scheduled start: 28 Nov, 7:30 PM IST.\r\n\r\nPlatform sponsor and CTF host: CTF7 (https://ctf7.com) - the platform running this CTF.\r\n\r\nWebsite: https://ctf.blackhat-india.com/",
-      "participants": 42,
+      "participants": 44,
       "isCtftime": true
     },
     {
@@ -256,7 +256,7 @@
       "weight": 0,
       "location": "",
       "description": "TUCTF26 is a Capture the Flag competition hosted by the CTF club at the University of Tulsa designed for a range of skill levels for teams that want to build their experience. We offer Web, Forensics, Crypto, Reverse Engineering, and Miscellanous based challenges. If you have any questions you can contact us through our Discord: https://discord.gg/Q35eWhHsw",
-      "participants": 6,
+      "participants": 7,
       "isCtftime": true
     },
     {
@@ -288,7 +288,7 @@
       "weight": 79.51,
       "location": "",
       "description": "Team bi0s invites you to our prestigious bi0sCTF 2026, a premier hacking event designed for hackers of all generations. We are dedicated to crafting challenges that incorporate the latest vulnerabilities, responsibly pushing the boundaries of innovation to ensure a delightful and enriching experience for all participants.\r\n\r\nStay tuned for official updates by following us on https://twitter.com/teambi0s.",
-      "participants": 55,
+      "participants": 56,
       "isCtftime": true
     },
     {
